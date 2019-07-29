@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" type="text/css" href="aqfront.css">
+</head>
+<!-- Basic General Styling -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" href="aqfront.css">
-
     <title>J2C</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,11 +28,13 @@
 </head>
 
 <!-- Navigation Bar - Basic Styling -->
-  <body>
+<body>
     <section class="hero is-fullheight is-default is-bold">
         <div class="hero-head">
             <nav class="navbar">
+        </div>
                 <div class="container">
+                </div>
                     <div class="navbar-brand">
                         <a class="navbar-item" href="../">
                             <img src="../images/bulma.png" alt="Logo">
@@ -41,6 +45,8 @@
                             <span></span>
                         </span>
                     </div>
+
+<!-- Navigation Menu -->
                     <div id="navbarMenu" class="navbar-menu">
                         <div class="navbar-end">
                             <div class="tabs is-right">
@@ -61,24 +67,8 @@
             <div class="container has-text-centered">
                 <div class="columns is-vcentered">
                     <div class="column is-5">
-                        <figure class="image is-4by3">
-                            <img src="https://picsum.photos/800/600/?random" alt="Description">
-                        </figure>
                     </div>
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title">
-                            Superhero Scaffolding
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Let this cover page describe a product or service.
-                        </h2>
-                        <br>
-                        <p class="has-text-centered">
-                            <a class="button is-medium is-info is-outlined">
-                                Learn more
-                            </a>
-                        </p>
-
+<!-- Header and bulk text!-->
 
                     <div class="column is-6 is-offset-1">
                         <h1 class="title is-2">
@@ -114,10 +104,10 @@
                             <a name = "Iama"> </a>
                             I am a....
                         </h4>
-                        <button class="button is-black is-inverted">High School Junior</button>
-                        <button class="button is-black is-inverted">High School Senior</button>
-                        <button class="button is-black is-inverted">Teacher</button>
-                        <button class="button is-black is-inverted">Transfer Student</button>
+                        <button class="button">High School Junior</button>
+                        <button class="button">High School Senior</button>
+                        <button class="button">Teacher</button>
+                        <button class="button">Transfer Student</button>
                         <br>
                         <br>
 
@@ -125,13 +115,13 @@
                         <h4 class = "title is-2">
                             I have questions about...
                         </h4>
-                        <button class="button is-black is-inverted">where to start</button>
-                        <button class="button is-black is-inverted">general FAQs</button>
-                        <button class="button is-black is-inverted">where to apply</button>
-                        <button class="button is-black is-inverted">scholarship information</button>
-                        <button class="button is-black is-inverted">essay help</button>
-                        <button class="button is-black is-inverted">CommonApp and CoalitionApp help</button>
-                        <button class="button is-black is-inverted">writing reccomendations</button>
+                        <button class="button">where to start</button>
+                        <button class="button">general FAQs</button>
+                        <button class="button">where to apply</button>
+                        <button class="button">scholarship information</button>
+                        <button class="button">essay help</button>
+                        <button class="button">CommonApp and CoalitionApp help</button>
+                        <button class="button">writing reccomendations</button>
                         <br>
                         <br>
                         <br>
@@ -142,7 +132,7 @@
                           I am from....
                         </h4>
                       </div>
-                      <div class="dropdown is-hoverable">
+                      <div class="dropdown is-active">
                         <div class="dropdown-trigger">
                           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                             <span>Select a state!</span>
@@ -159,7 +149,7 @@
                             <a class="dropdown-item">
                               Alaska
                             </a>
-                            <a class="dropdown-item">
+                            <a class="dropdown-item is-active">
                               Arizona
                             </a>
                             <a class="dropdown-item">
@@ -310,7 +300,13 @@
                 </div>
             </div>
         </div>
+
+
 <!-- Creds. (Maybe put menu here?) -->
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
                         <li><a>Created in Kirkland, Washington. 2019.</a></li>
                     </ul>
                 </div>
@@ -319,4 +315,5 @@
     </section>
     <script src="../js/bulma.js"></script>
 </body>
+
 </html>
