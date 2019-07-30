@@ -30,30 +30,34 @@
 <script src="..\[jumpstart-to-college]\[script].js"></script>
 <!-- Navigation Bar - Basic Styling -->
 
-<body>
-  <section class="hero is-fullheight is-default is-bold">
+<section class="hero is-fullheight is-default is-bold">
     <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <span class="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="tabs is-right">
-                  <li class="is-active"><a>Home</a></li>
-                  <li><a href="">J2C</a></li>
-                  <li><a href="calendar.html">Calendar</a></li>
-                  <li><a href="bio.html">Team</a></li>
-                  <li><a href="">Help</a></li>
-              </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                              <li class="is-active"><a href="index.html">Home</a></li>
+                              <li><a href="#">J2C</a></li>
+                              <li><a href="calendar.html">Calendar</a></li>
+                              <li><a href="bio.html">Team</a></li>
+                              <li><a href="help.html">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </nav>
+    </div>
       </nav>
     </div>
     <div class="hero-body">
@@ -86,7 +90,6 @@
       <div class="container">
         <div class="tabs is-centered">
           <ul>
-           
           </ul>
         </div>
       </div>
@@ -290,21 +293,19 @@
                 </div>
             </div>
         </div>
-
-
         <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
 
 
 <!-- Creds. (Maybe put menu here?) -->
-                    <div>
-                    </body>
-                    <br>
-                    <h2>
-                      Created in Kirkland, Washington (2019)
-                    </h2>
-                </div>
-            </div>
-        </div>
+</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Jumpstart to College</strong>&nbsp;2019
+    <br>Created in <strong>Kirkland, Washington</strong>
+    </p>
+  </div>
+</footer>
     </section>
     <script src="../js/bulma.js"></script>
 
