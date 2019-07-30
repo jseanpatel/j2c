@@ -41,7 +41,7 @@ function initClient() {
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     authorizeButton.onclick = handleAuthClick;
     signoutButton.onclick = handleSignoutClick;
-  }, function(error) {
+  }, function (error) {
     appendPre(JSON.stringify(error, null, 2));
   });
 }
@@ -54,7 +54,7 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-  
+    listUpcomingEvents();
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -100,7 +100,7 @@ function listUpcomingEvents() {
     'singleEvents': true,
     'maxResults': 10,
     'orderBy': 'startTime'
-  }).then(function(response) {
+  }).then(function (response) {
     var events = response.result.items;
     appendPre('Upcoming events:');
 
@@ -117,4 +117,18 @@ function listUpcomingEvents() {
       appendPre('No upcoming events found.');
     }
   });
+}
+
+// index.html
+
+var i = 0;
+var txt =  'A simple tool to organize your college applications.';
+var speed = 50;
+
+function writeTitleText() {
+  if (i < txt.length) {
+    document.getElementById("titleText").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(writeTitleText, speed);
+  }
 }
