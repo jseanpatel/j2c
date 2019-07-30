@@ -1,3 +1,4 @@
+
 // Calendar.
 
 // Client ID and API key from the Developer Console
@@ -117,4 +118,3 @@ function listUpcomingEvents() {
     }
   });
 }
-
