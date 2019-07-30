@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <link rel="stylesheet" type="text/css" href="aqfront.css">
-</head>
-
-<!-- Basic General Styling -->
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,41 +26,45 @@
     }
   </style>
 </head>
+
+<script src="..\[jumpstart-to-college]\[script].js"></script>
 <!-- Navigation Bar - Basic Styling -->
 
-<body>
-  <section class="hero is-fullheight is-default is-bold">
+<section class="hero is-fullheight is-default is-bold">
     <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <span class="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="tabs is-right">
-                <ul>
-                  <li class="is-active"><a>Home</a></li>
-                  <li><a href="">Examples</a></li>
-                  <li><a href="">Features</a></li>
-                  <li><a href="">Team</a></li>
-                  <li><a href="">Help</a></li>
-                </ul>
-              </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                              <li class="is-active"><a href="index.html">Home</a></li>
+                              <li><a href="#">J2C</a></li>
+                              <li><a href="calendar.html">Calendar</a></li>
+                              <li><a href="bio.html">Team</a></li>
+                              <li><a href="help.html">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </nav>
+    </div>
       </nav>
     </div>
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div class="columns is-vcentered">
-          <div class="column is-5">
-            <figure class="image is-4by3">
+        <div class="columns is-centered">
+          <div class="column is-centered">
+            <figure class="image is-center">
               <img src="https://picsum.photos/800/600/?random" alt="Description">
             </figure>
           </div>
@@ -80,7 +77,7 @@
             </h2>
             <br>
             <p class="has-text-centered">
-              <a class="button is-medium is-info is-outlined">
+              <a class="button is-medium is-info is-outlined" href="#welcome">
                 Let's go!
               </a>
             </p>
@@ -88,12 +85,12 @@
         </div>
       </div>
     </div>
-
+  </section>
     <div class="hero-foot">
       <div class="container">
         <div class="tabs is-centered">
           <ul>
-            <li><i class="fas fa-caret-down fa-3x"></i></li>
+
           </ul>
         </div>
       </div>
@@ -104,7 +101,8 @@
       Jumpstart to College!
     </h1>
     <br>
-    <h2> Welcome to Jumpstart to College! Calling the college application process stressful is an understatement. But,
+    <h2> <a name = "welcome"> </a>
+      Welcome to Jumpstart to College! Calling the college application process stressful is an understatement. But,
       we want to make that a bit easier and more accessible for everyone. This site is packed with information,
       calendars, and resources for all students entering the college aplication process - first-generation, low-income,
       private school and public school students. We also have information for teachers to assist them in writing
@@ -139,215 +137,180 @@
       <img src="https://picsum.photos/800/600/?random" alt="Description">
     </figure>
     <br>
+<!-- User Characteristic Selection -->
+                        <h4 class = "title is-half">
+                            <a name = "Iama"> </a>
+                            I am a....
+                        </h4>
+                        <input type = "radio" name = "user" id = "Junior" > HS Junior
+                        <br>
+                        <input type = "radio" name = "user" id = "Senior"> HS Senior
+                        <br>
+                        <input type = "radio" name = "user" id = "Teacher"> Teacher
+                        <br>
+                        <input type = "radio" name = "user" id = "Parent"> Parent
+                        <br>
+<!-- User Question Selection -->
+                        <h4 class = "title is-2">
+                          <br>
+                            I have questions about...
+                        </h4>
+                        <input type = "radio" name = "needs" id = "where_to_start" > where to start
+                        <br>
+                        <input type = "radio" name = "needs" id = "general_process"> the general process
+                        <br>
+                        <input type = "radio" name = "needs" id = "where_to_apply"> where to apply
+                        <br>
+                        <input type = "radio" name = "needs" id = "scholarships"> scholarship information
+                        <br>
+                        <input type = "radio" name = "needs" id = "essay"> essay help
+                        <br>
+                        <input type = "radio" name = "needs" id = "common_app"> the CommonApp and CoalitionApp
+                        <br>
+                        <input type = "radio" name = "needs" id = "recc_letters"> writing reccomendation letters
+                        <br>
+                        <br>
+<!-- Dropdown for Location Selection -->
+                        <h4 class = "title is-2">
+                          I am from....
+                        </h4>
+                      </div>
+                      <br>
+                      <div class="dropdown is-hoverable is-up">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>Select a state!</span>
+                            </span>
+                          <select>
+                            <option
+                            value = "Alabama" id = "Alabama">Alabama</option>
+                            <option
+                            value = "Alaska" id = "Alaska">Alaska</option>
+                            <option
+                            value = "Arizona" id = "Arizona">Arizona</option>
+                            <option
+                            value = "Arkansas" id = "Arkanasa">Arkansas</option>
+                            <option
+                            value = "California" id = "California">California</option>
+                            <option
+                            value = "Colorado" id = "Colorado">Colorado</option>
+                            <option
+                            value = "Connecticut" id = "Connecticut">Connecticut</option>
+                            <option
+                            value = "Delaware" id ="Delaware">Delaware</option>
+                            <option
+                            value = "Florida" id = "Florida" >Florida</option>
+                            <option
+                            value = "Georgia" id = "Georgia">Georgia</option>
+                            <option
+                            value = "Hawaii" id = "Hawaii">Hawaii</option>
+                            <option
+                            value = "Idaho" id = "Idaho">Idaho</option>
+                            <option
+                            value = "Illinois" id = "Illinois">Illinois</option>
+                            <option
+                            value = "Indiana" id = "Indiana">Indiana</option>
+                            <option
+                            value = "Iowa" id = "Iowa">Iowa</option>
+                            <option
+                            value = "Kansas" id = "Kansas">Kansas</option>
+                            <option
+                            value = "Kentucky" id = "Kentucky">Kentucky</option>
+                            <option
+                            value = "Louisiana" id = "Louisiana">Louisiana</option>
+                            <option
+                            value = "Maine" id = "Maine">Maine</option>
+                            <option
+                            value = "Maryland" id = "Maryland">Maryland</option>
+                            <option
+                            value = "Massachusetts" id = "Massachusetts">Massachusetts</option>
+                            <option
+                            value = "Michigan" id = "Michigan">Michigan</option>
+                            <option
+                            value = "Minnesota" id = "Minnesota">Minnesota</option>
+                            <option
+                            value = "Mississippi" id = "Mississippi">Mississippi</option>
+                            <option
+                            value = "Missouri" id = "Missouri">Missouri</option>
+                            <option
+                            value = "Montana" id = "Montana">Montana</option>
+                            <option
+                            value = "Nebraska" id = "Nebraska">Nebraska</option>
+                            <option
+                            value = "Nevada" id = "Nevada">Nevada</option>
+                            <option
+                            value = "New Hampshire"id = "NewHampshire">New Hampshire</option>
+                            <option
+                            value = "New Jersey" id = "NewJersey">New Jersey</option>
+                            <option
+                            value = "New Mexico" id = "NewMexico">New Mexico</option>
+                            <option
+                            value = "New York" id = "NewYork">New York</option>
+                            <option
+                            value = "North Carolina" id = "NorthCarolina">North Carolina</option>
+                            <option
+                            value = "North Dakota" id = "NorthDakota">North Dakota</option>
+                            <option
+                            value = "Ohio" id = "Ohio">Ohio</option>
+                            <option
+                            value = "Oklahoma" id ="Oklahoma">Oklahoma</option>
+                            <option
+                            value = "Oregon" id = "Oregon">Oregon</option>
+                            <option
+                            value = "Pennsylvania" id = "Pennsylvania">Pennsylvania</option>
+                            <option
+                            value = "Rhode Island" id = "RhodeIsland">Rhode Island</option>
+                            <option
+                            value = "South Carolina" id = "SouthCarolina">South Carolina</option>
+                            <option
+                            value = "South Dakota" id = "SouthDakora">South Dakota</option>
+                            <option
+                            value = "Tennessee" id = "Tennessee">Tennessee</option>
+                            <option
+                            value = "Texas" id = "Texas">Texas</option>
+                            <option
+                            value = "Utah" id = "Utah">Utah</option>
+                            <option
+                            value = "Vermont" id = "Vermont">Vermont</option>
+                            <option
+                            value = "Virginia" id = "Virginia">Virginia</option>
+                            <option
+                            value = "Washington" id = "Washington">Washington</option>
+                            <option
+                            value = "West Virginia" id = "WestVirginia">West Virginia</option>
+                            <option
+                            value = "Wisconsin" id = "Wisconsin">Wisconsin</option>
+                            <option
+                            value = "Wyoming" id = "Wyoming">Wyoming</option>
+                          </select>
 
-    <!-- User Characteristic Selection -->
-    <h4 class="title is-2">
-      <a name="Iama"> </a>
-      I am a....
-    </h4>
-    <button class="button is-black is-inverted">High School Junior</button>
-    <button class="button is-black is-inverted">High School Senior</button>
-    <button class="button is-black is-inverted">Teacher</button>
-    <button class="button is-black is-inverted">Transfer Student</button>
-    <br>
-    <br>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- User Question Selection -->
-    <h4 class="title is-2">
-      I have questions about...
-    </h4>
-    <button class="button is-black is-inverted">where to start</button>
-    <button class="button is-black is-inverted">general FAQs</button>
-    <button class="button is-black is-inverted">where to apply</button>
-    <button class="button is-black is-inverted">scholarship information</button>
-    <button class="button is-black is-inverted">essay help</button>
-    <button class="button is-black is-inverted">CommonApp and CoalitionApp help</button>
-    <button class="button is-black is-inverted">writing reccomendations</button>
-    <br>
-    <br>
-    <br>
-    <p class="has-text-centered">
+
+        <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
+
+
+<!-- Creds. (Maybe put menu here?) -->
+</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Jumpstart to College</strong>&nbsp;2019
+    <br>Created in <strong>Kirkland, Washington</strong>
     </p>
-    <!-- Dropdown for Location Selection -->
-    <h4 class="title is-2">
-      I am from....
-    </h4>
   </div>
-  <div class="dropdown is-hoverable is-up">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Select a state!</span>
+</footer>
 
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content">
-        <a class="dropdown-item">
-          Alabama
-        </a>
-        <a class="dropdown-item">
-          Alaska
-        </a>
-        <a class="dropdown-item">
-          Arizona
-        </a>
-        <a class="dropdown-item">
-          Arkansas
-        </a>
-        <a class="dropdown-item">
-          California
-        </a>
-        <a class="dropdown-item">
-          Colorado
-        </a>
-        <a class="dropdown-item">
-          COnnecticut
-        </a>
-        <a class="dropdown-item">
-          Delaware
-        </a>
-        <a class="dropdown-item">
-          Florida
-        </a>
-        <a class="dropdown-item">
-          Georgia
-        </a>
-        <a class="dropdown-item">
-          Hawaii
-        </a>
-        <a class="dropdown-item">
-          Idaho
-        </a>
-        <a class="dropdown-item">
-          Illinois
-        </a>
-        <a class="dropdown-item">
-          Indiana
-        </a>
-        <a class="dropdown-item">
-          Iowa
-        </a>
-        <a class="dropdown-item">
-          Kansas
-        </a>
-        <a class="dropdown-item">
-          Kentucky
-        </a>
-        <a class="dropdown-item">
-          Louisiana
-        </a>
-        <a class="dropdown-item">
-          Maine
-        </a>
-        <a class="dropdown-item">
-          Maryland
-        </a>
-        <a class="dropdown-item">
-          Massachusetts
-        </a>
-        <a class="dropdown-item">
-          Michigan
-        </a>
-        <a class="dropdown-item">
-          Minnesota
-        </a>
-        <a class="dropdown-item">
-          Mississippi
-        </a>
-        <a class="dropdown-item">
-          Missouri
-        </a>
-        <a class="dropdown-item">
-          Montana
-        </a>
-        <a class="dropdown-item">
-          Nebraska
-        </a>
-        <a class="dropdown-item">
-          New Hampshire
-        </a>
-        <a class="dropdown-item">
-          New Jersey
-        </a>
-        <a class="dropdown-item">
-          New Mexico
-        </a>
-        <a class="dropdown-item">
-          New York
-        </a>
-        <a class="dropdown-item">
-          North Carolina
-        </a>
-        <a class="dropdown-item">
-          North Dakota
-        </a>
-        <a class="dropdown-item">
-          Ohio
-        </a>
-        <a class="dropdown-item">
-          Oklahoma
-        </a>
-        <a class="dropdown-item">
-          Oregon
-        </a>
-        <a class="dropdown-item">
-          Pennsylvania
-        </a>
-        <a class="dropdown-item">
-          Rhode Island
-        </a>
-        <a class="dropdown-item">
-          South Carolina
-        </a>
-        <a class="dropdown-item">
-          South Dakota
-        </a>
-        <a class="dropdown-item">
-          Tennessee
-        </a>
-        <a class="dropdown-item">
-          Texas
-        </a>
-        <a class="dropdown-item">
-          Utah
-        </a>
-        <a class="dropdown-item">
-          Utah
-        </a>
-        <a class="dropdown-item">
-          Virginia
-        </a>
-        <a class="dropdown-item">
-          Washington
-        </a>
-        <a class="dropdown-item">
-          West Virginia
-        </a>
-        <a class="dropdown-item">
-          Wisconsin
-        </a>
-        <a class="dropdown-item">
-          Wyoming
-        </a>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <!-- Creds. (Maybe put menu here?) -->
-  <li><a>Created in Kirkland, Washington. 2019.</a></li>
-  </ul>
-  </div>
-  </div>
-  </div>
-  </section>
-  <script src="../js/bulma.js"></script>
-</body>
+    </section>
+    <script src="../js/bulma.js"></script>
 
-</html>
+  </html>
