@@ -6,37 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="aqfront.css">
 
-  <title>J2C</title>
+  <title>J2C - Home</title>
   <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- Bulma Version 0.7.5-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script type="text/javascript" src="scripts.js"></script>
   <style type="text/css">
     html,
     body {
-      font-family: 'Open Sans';
+        font-family: 'Open Sans';
     }
-
     img {
-      padding: 5px;
-      border: 3px solid #ccc;
+        padding: 5px;
+        border: 1px solid #ccc;
     }
   </style>
 </head>
-
+<body onload=writeTitleText()>
 <script src="..\[jumpstart-to-college]\[script].js"></script>
 <!-- Navigation Bar - Basic Styling -->
-
 <section class="hero is-fullheight is-default is-bold">
     <div class="hero-head">
-        <nav class="navbar">
+        <nav class="navbar is-white">
             <div class="container">
-                <div class="navbar-brand">
+                <div class="navbar-brand has-background-dark">
                     <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
@@ -46,11 +46,11 @@
                     <div class="navbar-end">
                         <div class="tabs is-right">
                             <ul>
-                              <li class="is-active"><a href="index.html">Home</a></li>
-                              <li><a href="#">J2C</a></li>
-                              <li><a href="calendar.html">Calendar</a></li>
-                              <li><a href="bio.html">Team</a></li>
-                              <li><a href="help.html">Help</a></li>
+                                <li class="is-active"><a href="index.html">Home</a></li>
+                                <li><a href="j2c.html">J2C</a></li>
+                                <li><a href="calendar.html">Calendar</a></li>
+                                <li><a href="bio.html">Team</a></li>
+                                <li><a href="">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,16 +64,12 @@
       <div class="container has-text-centered">
         <div class="columns is-centered">
           <div class="column is-centered">
-            <figure class="image is-center">
-              <img src="https://picsum.photos/800/600/?random" alt="Description">
-            </figure>
-          </div>
-          <div class="column is-6 is-offset-1">
             <h1 class="title is-2">
               Jumpstart to College
             </h1>
-            <h2 class="subtitle is-4">
-              A simple tool to organize your college applications.
+            <br>
+            <h2 class="subtitle is-4 is-italic">
+              <p id="titleText"></p>
             </h2>
             <br>
             <p class="has-text-centered">
@@ -85,9 +81,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
     <div class="hero-foot">
-      <div class="container">
+      <div class="column">
         <div class="tabs is-centered">
           <ul>
           </ul>
@@ -95,7 +92,8 @@
       </div>
     </div>
   </section>
-  <div class="column is-mobile is-6 is-1">
+  <div class = "columns">
+  <div class="column">
     <h1 class="title is-2">
       Jumpstart to College!
     </h1>
@@ -128,57 +126,59 @@
     <h2 class="subtitle is-4">
       Take control of your future!
     </h2>
-    <!-- Anchor Button -->
-    <a href="#Iama" class="button"> I want to start! </a>
+    </div>
+
     <br>
     <br>
-    <figure class="image is-4by3">
-      <img src="https://picsum.photos/800/600/?random" alt="Description">
-    </figure>
+
     <br>
 <!-- User Characteristic Selection -->
-                        <h4 class = "title is-half">
+<div class = "columns">
+<div class="column is-centered">
+
+                        <h4 class = "title">
                             <a name = "Iama"> </a>
                             I am a....
                         </h4>
-                        <input type = "radio" name = "user" id = "Junior" > HS Junior
+                        <input type = "radio" name = "user" id = "Junior" > &nbsp;HS Junior
                         <br>
-                        <input type = "radio" name = "user" id = "Senior"> HS Senior
+                        <input type = "radio" name = "user" id = "Senior"> &nbsp;HS Senior
                         <br>
-                        <input type = "radio" name = "user" id = "Teacher"> Teacher
+                        <input type = "radio" name = "user" id = "Teacher"> &nbsp;Teacher
                         <br>
-                        <input type = "radio" name = "user" id = "Parent"> Parent
+                        <input type = "radio" name = "user" id = "Parent"> &nbsp;Parent
                         <br>
 <!-- User Question Selection -->
-                        <h4 class = "title is-2">
+                        <h4 class = "title">
                           <br>
                             I have questions about...
                         </h4>
-                        <input type = "radio" name = "needs" id = "where_to_start" > where to start
+                        <input type = "radio" name = "needs" id = "where_to_start" > &nbsp;Where to Start
                         <br>
-                        <input type = "radio" name = "needs" id = "general_process"> the general process
+                        <input type = "radio" name = "needs" id = "general_process"> &nbsp;The General Process
                         <br>
-                        <input type = "radio" name = "needs" id = "where_to_apply"> where to apply
+                        <input type = "radio" name = "needs" id = "where_to_apply"> &nbsp;Where to Apply
                         <br>
-                        <input type = "radio" name = "needs" id = "scholarships"> scholarship information
+                        <input type = "radio" name = "needs" id = "scholarships"> &nbsp;Scholarship Information
                         <br>
-                        <input type = "radio" name = "needs" id = "essay"> essay help
+                        <input type = "radio" name = "needs" id = "essay"> &nbsp;Essay Help
                         <br>
-                        <input type = "radio" name = "needs" id = "common_app"> the CommonApp and CoalitionApp
+                        <input type = "radio" name = "needs" id = "common_app"> &nbsp;The Common App and  The Coalition App
                         <br>
-                        <input type = "radio" name = "needs" id = "recc_letters"> writing reccomendation letters
+                        <input type = "radio" name = "needs" id = "recc_letters"> &nbsp;Writing Recommendation Letters
                         <br>
                         <br>
 <!-- Dropdown for Location Selection -->
                         <h4 class = "title is-2">
                           I am from....
                         </h4>
-                      </div>
-                      <br>
-                      <div class="dropdown is-hoverable is-up">
+
+
+
+                      <div class="dropdown is-hoverable is-up is-mobile">
                         <div class="dropdown-trigger">
                           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span>Select a state!</span>
+                          Select a state!
                             </span>
                           <select>
                             <option
@@ -282,7 +282,7 @@
                             <option
                             value = "Wyoming" id = "Wyoming">Wyoming</option>
                           </select>
-
+                        </div>
                           </div>
                         </div>
                       </div>
@@ -293,19 +293,25 @@
                 </div>
             </div>
         </div>
-        <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
+       <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
 
+        </body>
 
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Jumpstart to College</strong>&nbsp;2019
+            <br>Created in <strong>Kirkland, Washington</strong>
+            </p>
+          </div>
+        </footer>
 <!-- Creds. (Maybe put menu here?) -->
-</div>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Jumpstart to College</strong>&nbsp;2019
-    <br>Created in <strong>Kirkland, Washington</strong>
-    </p>
-  </div>
-</footer>
+                    <div>
+                    </body>
+
+                </div>
+            </div>
+        </div>
     </section>
     <script src="../js/bulma.js"></script>
 
