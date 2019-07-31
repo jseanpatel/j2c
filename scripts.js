@@ -1,6 +1,10 @@
 // Calendar
 // Client ID and API key from the Developer Console
 
+// Calendar.
+
+// Client ID and API key from the Developer Console
+
 var CLIENT_ID = '65468664004-1ricucbt8rkfcudnri1s93u06qk6ps63.apps.googleusercontent.com';
 var API_KEY = 'AIzaSAIzaSyB5Jgq0cooeQNrxFF53NBJ0myZUIUj1I7A';
 
@@ -15,6 +19,7 @@ var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
 
 /**
+ *  On load, called to load the auth2 library and API client library.
  */
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
@@ -51,7 +56,7 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-    listUpcomingEvents();
+
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
