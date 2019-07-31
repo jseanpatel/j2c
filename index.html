@@ -22,7 +22,7 @@
     }
   </style>
 </head>
-
+<body onload=writeTitleText()>
 <script src="..\[jumpstart-to-college]\[script].js"></script>
 <!-- Navigation Bar - Basic Styling -->
 
@@ -65,13 +65,12 @@
       <div class="container has-text-centered">
         <div class="columns is-centered">
           <div class="column is-centered">
-
             <h1 class="title is-2">
               Jumpstart to College
             </h1>
             <br>
-            <h2 class="subtitle is-4 is-italic	">
-              A simple tool to organize your college applications.
+            <h2 class="subtitle is-4 is-italic">
+              <p id="titleText"></p>
             </h2>
             <br>
             <p class="has-text-centered">
@@ -83,6 +82,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
     <div class="hero-foot">
       <div class="column">
@@ -293,10 +293,12 @@
         </div>
 </div>
 
+
         <footer class="footer">
           <div class="content has-text-centered">
             <p>
               <strong>Jumpstart to College</strong>&nbsp;2019
+              <br>Created in <strong>Kirkland, Washington</strong>
             </p>
           </div>
         </footer>

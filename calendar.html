@@ -17,14 +17,15 @@
   <!-- Bulma Version 0.7.5-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
   <style type="text/css">
-      html,
-      body {
-          font-family: 'Open Sans';
-      }
-      img {
-          padding: 5px;
-          border: 1px solid #ccc;
-      }
+    html,
+    body {
+      font-family: 'Open Sans';
+    }
+
+    img {
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 
@@ -54,8 +55,9 @@
                       </div>
                   </div>
               </div>
-          </nav>
-      </div>
+            </div>
+          </div>
+        </div>
       </nav>
   <p>Google Calendar API Quickstart</p>
 
@@ -168,37 +170,26 @@
         var events = response.result.items;
         appendPre('Upcoming events:');
 
-        if (events.length > 0) {
-          for (i = 0; i < events.length; i++) {
-            var event = events[i];
-            var when = event.start.dateTime;
-            if (!when) {
-              when = event.start.date;
-            }
-            appendPre(event.summary + ' (' + when + ')')
-          }
-        } else {
-          appendPre('No upcoming events found.');
-        }
-      });
-    }
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
 
-  </script>
 
-  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+      </script>
+    <script type="text/javascript" src="scripts.js"></script>
 
-  </div>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Jumpstart to College</strong>&nbsp;2019
-      <br>Created in <strong>Kirkland, Washington</strong>
-      </p>
     </div>
-  </footer>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Jumpstart to College</strong>&nbsp;2019
+          <br>Created in <strong>Kirkland, Washington</strong>
+        </p>
+      </div>
+    </footer>
 
 </body>
-
 </html>
+
