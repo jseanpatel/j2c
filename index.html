@@ -6,16 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="index.css">
   <title>J2C</title>
-  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../jumpstart-to-college/J2C.png is-small" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- Bulma Version 0.7.5-->
-  <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css"/>
   <script type="text/javascript" src="scripts.js"></script>
   <style type="text/css">
-    html,
-    body {
+    html body {
       font-family: 'Open Sans';
       margin-left: 10px;
       margin-right: 10px;
@@ -27,22 +26,36 @@
 <script src="..\[jumpstart-to-college]\[script].js"></script>
 <!-- Navigation Bar - Basic Styling -->
 
-<section class="hero is-fullheight is-default is-bold">
-    <div class="hero-head">
-      <nav class="navbar has-background-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-
-
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
+<body>
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-head">
+            <nav class="navbar has-background-light">
+                <div class="container">
+                    <div class="navbar-brand has-background-dark">
+                        <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class = "is-active"><a href="index.html">Home</a></li>
+                                    <li><a href="j2c.html">J2C</a></li>
+                                    <li><a href="calendar.html">Calendar</a></li>
+                                    <li <a href="bio.html">Team</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="section">
     </ul>
         </nav>
     </div>
@@ -115,7 +128,6 @@
       Take control of your future!
     </h2>
     </div>
-
     <br>
     <br>
 
@@ -127,32 +139,32 @@
                             <a name = "Iama"> </a>
                             I am a....
                         </h4>
-                        <input type = "radio" name = "user" id = "Junior" > HS Junior
+                        <input type = "radio" name = "user" value = "Junior" id = "Junior" onClick = "get_grade_info();"> HS Junior
                         <br>
-                        <input type = "radio" name = "user" id = "Senior"> HS Senior
+                        <input type = "radio" name = "user" value = "Senior" id = "Senior" onClick = "get_grade_info();"> HS Senior
                         <br>
-                        <input type = "radio" name = "user" id = "Teacher"> Teacher
+                        <input type = "radio" name = "user" value = "Teacher" id = "Teacher" onClick = "get_grade_info();"> Teacher
                         <br>
-                        <input type = "radio" name = "user" id = "Parent"> Parent
+                        <input type = "radio" name = "user" value = "Parent" id = "Parent" onClick = "get_grade_info();"> Parent
                         <br>
 <!-- User Question Selection -->
                         <h4 class = "title">
                           <br>
                             I have questions about...
                         </h4>
-                        <input type = "radio" name = "needs" id = "where_to_start" > where to start
+                        <input type = "radio" name = "needs" id = "where_to_start" onClick = "savePreference()"> where to start
                         <br>
-                        <input type = "radio" name = "needs" id = "general_process"> the general process
+                        <input type = "radio" name = "needs" id = "general_process" onClick = "savePreference()"> the general process
                         <br>
-                        <input type = "radio" name = "needs" id = "where_to_apply"> where to apply
+                        <input type = "radio" name = "needs" id = "where_to_apply" onClick = "savePreference()"> where to apply
                         <br>
-                        <input type = "radio" name = "needs" id = "scholarships"> scholarship information
+                        <input type = "radio" name = "needs" id = "scholarships" onClick = "savePreference()"> scholarship information
                         <br>
-                        <input type = "radio" name = "needs" id = "essay"> essay help
+                        <input type = "radio" name = "needs" id = "essay" onClick = "savePreference()"> essay help
                         <br>
-                        <input type = "radio" name = "needs" id = "common_app"> the CommonApp and CoalitionApp
+                        <input type = "radio" name = "needs" id = "common_app" onClick = "savePreference()"> the CommonApp and CoalitionApp
                         <br>
-                        <input type = "radio" name = "needs" id = "recc_letters"> writing reccomendation letters
+                        <input type = "radio" name = "needs" id = "recc_letters" onClick = "savePreference()"> writing reccomendation letters
                         <br>
                         <br>
 <!-- Dropdown for Location Selection -->
@@ -166,106 +178,108 @@
                             </span>
                           <select>
                             <option
-                            value = "Alabama" id = "Alabama">Alabama</option>
+                            name = "state" value = "Alabama" id = "Alabama">Alabama</option>
                             <option
-                            value = "Alaska" id = "Alaska">Alaska</option>
+                            name = "state" value = "Alaska" id = "Alaska">Alaska</option>
                             <option
-                            value = "Arizona" id = "Arizona">Arizona</option>
+                            name = "state" value = "Arizona" id = "Arizona">Arizona</option>
                             <option
-                            value = "Arkansas" id = "Arkanasa">Arkansas</option>
+                            name = "state" value = "Arkansas" id = "Arkanasa">Arkansas</option>
                             <option
-                            value = "California" id = "California">California</option>
+                            name = "state" value = "California" id = "California">California</option>
                             <option
-                            value = "Colorado" id = "Colorado">Colorado</option>
+                            name = "state" value = "Colorado" id = "Colorado">Colorado</option>
                             <option
-                            value = "Connecticut" id = "Connecticut">Connecticut</option>
+                            name = "state" value = "Connecticut" id = "Connecticut">Connecticut</option>
                             <option
-                            value = "Delaware" id ="Delaware">Delaware</option>
+                            name = "state" value = "Delaware" id ="Delaware">Delaware</option>
                             <option
-                            value = "Florida" id = "Florida" >Florida</option>
+                            name = "state" value = "Florida" id = "Florida" >Florida</option>
                             <option
-                            value = "Georgia" id = "Georgia">Georgia</option>
+                            name = "state" value = "Georgia" id = "Georgia">Georgia</option>
                             <option
-                            value = "Hawaii" id = "Hawaii">Hawaii</option>
+                            name = "state" value = "Hawaii" id = "Hawaii">Hawaii</option>
                             <option
-                            value = "Idaho" id = "Idaho">Idaho</option>
+                            name = "state" value = "Idaho" id = "Idaho">Idaho</option>
                             <option
-                            value = "Illinois" id = "Illinois">Illinois</option>
+                            name = "state" value = "Illinois" id = "Illinois">Illinois</option>
                             <option
-                            value = "Indiana" id = "Indiana">Indiana</option>
+                            name = "state" value = "Indiana" id = "Indiana">Indiana</option>
                             <option
-                            value = "Iowa" id = "Iowa">Iowa</option>
+                            name = "state" value = "Iowa" id = "Iowa">Iowa</option>
                             <option
-                            value = "Kansas" id = "Kansas">Kansas</option>
+                            name = "state" value = "Kansas" id = "Kansas">Kansas</option>
                             <option
-                            value = "Kentucky" id = "Kentucky">Kentucky</option>
+                            name = "state" value = "Kentucky" id = "Kentucky">Kentucky</option>
                             <option
-                            value = "Louisiana" id = "Louisiana">Louisiana</option>
+                            name = "state" value = "Louisiana" id = "Louisiana">Louisiana</option>
                             <option
-                            value = "Maine" id = "Maine">Maine</option>
+                            name = "state" value = "Maine" id = "Maine">Maine</option>
                             <option
-                            value = "Maryland" id = "Maryland">Maryland</option>
+                            name = "state" value = "Maryland" id = "Maryland">Maryland</option>
                             <option
-                            value = "Massachusetts" id = "Massachusetts">Massachusetts</option>
+                            name = "state" value = "Massachusetts" id = "Massachusetts">Massachusetts</option>
                             <option
-                            value = "Michigan" id = "Michigan">Michigan</option>
+                            name = "state" value = "Michigan" id = "Michigan">Michigan</option>
                             <option
-                            value = "Minnesota" id = "Minnesota">Minnesota</option>
+                            name = "state" value = "Minnesota" id = "Minnesota">Minnesota</option>
                             <option
-                            value = "Mississippi" id = "Mississippi">Mississippi</option>
+                            name = "state" value = "Mississippi" id = "Mississippi">Mississippi</option>
                             <option
-                            value = "Missouri" id = "Missouri">Missouri</option>
+                            name = "state" value = "Missouri" id = "Missouri">Missouri</option>
                             <option
-                            value = "Montana" id = "Montana">Montana</option>
+                            name = "state" value = "Montana" id = "Montana">Montana</option>
                             <option
-                            value = "Nebraska" id = "Nebraska">Nebraska</option>
+                            name = "state" value = "Nebraska" id = "Nebraska">Nebraska</option>
                             <option
-                            value = "Nevada" id = "Nevada">Nevada</option>
+                            name = "state" value = "Nevada" id = "Nevada">Nevada</option>
                             <option
-                            value = "New Hampshire"id = "NewHampshire">New Hampshire</option>
+                            name = "state" value = "New Hampshire"id = "NewHampshire">New Hampshire</option>
                             <option
-                            value = "New Jersey" id = "NewJersey">New Jersey</option>
+                            name = "state" value = "New Jersey" id = "NewJersey">New Jersey</option>
                             <option
-                            value = "New Mexico" id = "NewMexico">New Mexico</option>
+                            name = "state" value = "New Mexico" id = "NewMexico">New Mexico</option>
                             <option
-                            value = "New York" id = "NewYork">New York</option>
+                            name = "state" value = "New York" id = "NewYork">New York</option>
                             <option
-                            value = "North Carolina" id = "NorthCarolina">North Carolina</option>
+                            name = "state" value = "North Carolina" id = "NorthCarolina">North Carolina</option>
                             <option
-                            value = "North Dakota" id = "NorthDakota">North Dakota</option>
+                            name = "state" value = "North Dakota" id = "NorthDakota">North Dakota</option>
                             <option
-                            value = "Ohio" id = "Ohio">Ohio</option>
+                            name = "state" value = "Ohio" id = "Ohio">Ohio</option>
                             <option
-                            value = "Oklahoma" id ="Oklahoma">Oklahoma</option>
+                            name = "state" value = "Oklahoma" id ="Oklahoma">Oklahoma</option>
                             <option
-                            value = "Oregon" id = "Oregon">Oregon</option>
+                            name = "state" value = "Oregon" id = "Oregon">Oregon</option>
                             <option
-                            value = "Pennsylvania" id = "Pennsylvania">Pennsylvania</option>
+                            name = "state" value = "Pennsylvania" id = "Pennsylvania">Pennsylvania</option>
                             <option
-                            value = "Rhode Island" id = "RhodeIsland">Rhode Island</option>
+                            name = "state" value = "Rhode Island" id = "RhodeIsland">Rhode Island</option>
                             <option
-                            value = "South Carolina" id = "SouthCarolina">South Carolina</option>
+                            name = "state" value = "South Carolina" id = "SouthCarolina">South Carolina</option>
                             <option
-                            value = "South Dakota" id = "SouthDakora">South Dakota</option>
+                            name = "state" value = "South Dakota" id = "SouthDakora">South Dakota</option>
                             <option
-                            value = "Tennessee" id = "Tennessee">Tennessee</option>
+                            name = "state" value = "Tennessee" id = "Tennessee">Tennessee</option>
                             <option
-                            value = "Texas" id = "Texas">Texas</option>
+                            name = "state" value = "Texas" id = "Texas">Texas</option>
                             <option
-                            value = "Utah" id = "Utah">Utah</option>
+                            name = "state" value = "Utah" id = "Utah">Utah</option>
                             <option
-                            value = "Vermont" id = "Vermont">Vermont</option>
+                            name = "state" value = "Vermont" id = "Vermont">Vermont</option>
                             <option
-                            value = "Virginia" id = "Virginia">Virginia</option>
+                            name = "state" value = "Virginia" id = "Virginia">Virginia</option>
                             <option
-                            value = "Washington" id = "Washington">Washington</option>
+                            name = "state" value = "Washington" id = "Washington">Washington</option>
                             <option
-                            value = "West Virginia" id = "WestVirginia">West Virginia</option>
+                            name = "state" value = "West Virginia" id = "WestVirginia">West Virginia</option>
                             <option
-                            value = "Wisconsin" id = "Wisconsin">Wisconsin</option>
+                            name = "state" value = "Wisconsin" id = "Wisconsin">Wisconsin</option>
                             <option
-                            value = "Wyoming" id = "Wyoming">Wyoming</option>
+                            name = "state" value = "Wyoming" id = "Wyoming">Wyoming</option>
                           </select>
+                          <button class = "button is-normal" name = "gobtn" onclick= "get_grade_info();">Go!</button>
+
                         </div>
                           </div>
                         </div>
@@ -278,7 +292,6 @@
             </div>
         </div>
 </div>
-        <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
 
         <footer class="footer">
           <div class="content has-text-centered">

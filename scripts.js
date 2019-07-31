@@ -25,6 +25,8 @@ function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
 
+
+
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
@@ -46,6 +48,147 @@ function initClient() {
   }, function(error) {
     appendPre(JSON.stringify(error, null, 2));
   });
+}
+
+function get_info(id) {
+  if sessionStorage.getItem(id) == true {
+    switch(id) {
+/** users */
+      case 'Junior':
+/**    "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades" */
+      case 'Senior':
+/**    "1. Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you're supposed to be.!" */
+      case 'Teacher':
+/**    "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals" */
+      case 'Parent':
+/**    "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor" */
+/** Information Search */
+      case 'where_to_start':
+/**    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" */
+      case 'general_process':
+/**    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident." */
+      case 'where_to_apply':
+/**    "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae" */
+      case 'scholarships':
+/**    "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat" */
+      case 'essay':
+/**    "Et harum quidem rerum facilis est et expedita distinctio." */
+      case 'common_app':
+/**    "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem" */
+      case 'recc_letters':
+/**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
+/** State Search */
+      case 'Alabama':
+/**    "something about this state" */
+      case 'Alaska':
+/**    "something about this state" */
+      case 'Arizona':
+/**    "something about this state" */
+      case 'Arkansas':
+/**    "something about this state" */
+      case 'California':
+/**    "something about this state" */
+      case 'Colorado':
+/**    "something about this state" */
+      case 'Connecticut':
+/**    "something about this state" */
+      case 'Delaware':
+/**    "something about this state" */
+      case 'Florida':
+/**    "something about this state" */
+      case 'Georgia':
+/**    "something about this state" */
+      case 'Hawaii':
+/**    "something about this state" */
+      case 'Idaho':
+/**    "something about this state" */
+      case 'Illinois':
+/**    "something about this state" */
+      case 'Indiana':
+/**    "something about this state" */
+      case 'Iowa':
+/**    "something about this state" */
+      case 'Kansas':
+/**    "something about this state" */
+      case 'Kentucky':
+/**    "something about this state" */
+      case 'Louisiana':
+/**    "something about this state" */
+      case 'Maine':
+/**    "something about this state" */
+      case 'Maryland':
+/**    "something about this state" */
+      case 'Massachusetts':
+/**    "something about this state" */
+      case 'Michigan':
+/**    "something about this state" */
+      case 'Minnesota':
+/**    "something about this state" */
+      case 'Mississippi':
+/**    "something about this state" */
+      case 'Missouri':
+/**    "something about this state" */
+      case 'Montana':
+/**    "something about this state" */
+      case 'Nebraska':
+/**    "something about this state" */
+      case 'Nevada':
+/**    "something about this state" */
+      case 'NewHampshire':
+/**    "something about this state" */
+      case 'NewJersey':
+/**    "something about this state" */
+      case 'NewMexico':
+/**    "something about this state" */
+      case 'NewYork':
+/**    "something about this state" */
+      case 'NorthCarolina':
+/**    "something about this state" */
+      case 'NorthDakota':
+/**    "something about this state" */
+      case 'Ohio':
+/**    "something about this state" */
+      case 'Oklahoma':
+/**    "something about this state" */
+      case 'Oregon':
+/**    "something about this state" */
+      case 'Pennsylvania':
+/**    "something about this state" */
+      case 'RhodeIsland':
+/**    "something about this state" */
+      case 'SouthCarolina':
+/**    "something about this state" */
+      case 'SouthDakota':
+/**    "something about this state" */
+      case 'Tennessee':
+/**    "something about this state" */
+      case 'Texas':
+/**    "something about this state" */
+      case 'Utah':
+/**    "something about this state" */
+      case 'Vermont':
+/**    "something about this state" */
+      case 'Virginia':
+/**    "something about this state" */
+      case 'Washington':
+/**    "something about this state" */
+      case 'WestVirginia':
+/**    "something about this state" */
+      case 'Wisconsin':
+/**    "something about this state" */
+      case 'Wyoming':
+/**    "something about this state" */
+ */
+ */
+    }
+  }
+}
+
+
+
+
+function savePreference(key) {
+sessionStorage.setItem(key, true)
 }
 
 /**
@@ -94,14 +237,15 @@ function appendPre(message) {
  * the authorized user's calendar. If no events are found an
  * appropriate message is printed. */
 
- <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+ /** < a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
   <span aria-hidden="true"></span>
   <span aria-hidden="true"></span>
   <span aria-hidden="true"></span>
 </a>
+*/
 
 // document.addEventListener('DOMContentLoaded', () => {
-// 
+//
 //   // Get all "navbar-burger" elements
 //   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 //
@@ -124,11 +268,12 @@ function appendPre(message) {
 //     });
 //   }
 
+/**
 });
 <div class="navbar-menu" id="navMenu">
   <!-- navbar-start, navbar-end... -->
 </div>
-
+*/
 function listUpcomingEvents() {
   gapi.client.calendar.events.list({
     'calendarId': 'primary',
