@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="aqfront.css">
 
-  <title>J2C</title>
+  <title>J2C - Home</title>
   <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -18,10 +18,16 @@
   <style type="text/css">
     html,
     body {
-      font-family: 'Open Sans';
-      margin-left: 10px;
-      margin-right: 10px;
-      background-color: #EEFFFA
+
+        font-family: 'Open Sans';
+    }
+    img {
+        padding: 5px;
+        border: 1px solid #ccc;
+      /* 
+        margin-left: 10px;
+        margin-right: 10px;
+      */
     }
   </style>
 </head>
@@ -30,25 +36,30 @@
 <!-- Navigation Bar - Basic Styling -->
 <section class="hero is-fullheight is-default is-bold">
     <div class="hero-head">
-      <nav class="navbar has-background-light">
-        <div class="container">
-          <div class="navbar-brand has-background-dark">
-            <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
-            <span class="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="tabs is-right">
-                  <li class="is-active"><a>Home</a></li>
-                  <li><a href="j2c.html">J2C</a></li>
-                  <li><a href="calendar.html">Calendar</a></li>
-                  <li><a href="bio.html">Team</a></li>
-                  <li><a href="">Help</a></li>
-              </div>
+        <nav class="navbar is-white">
+            <div class="container">
+                <div class="navbar-brand has-background-dark">
+                    <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                                <li class="is-active"><a href="index.html">Home</a></li>
+                                <li><a href="j2c.html">J2C</a></li>
+                                <li><a href="calendar.html">Calendar</a></li>
+                                <li><a href="bio.html">Team</a></li>
+                                <li><a href="">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -75,6 +86,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
     <div class="hero-foot">
       <div class="column">
@@ -133,32 +145,32 @@
                             <a name = "Iama"> </a>
                             I am a....
                         </h4>
-                        <input type = "radio" name = "user" id = "Junior" > HS Junior
+                        <input type = "radio" name = "user" id = "Junior" > &nbsp;HS Junior
                         <br>
-                        <input type = "radio" name = "user" id = "Senior"> HS Senior
+                        <input type = "radio" name = "user" id = "Senior"> &nbsp;HS Senior
                         <br>
-                        <input type = "radio" name = "user" id = "Teacher"> Teacher
+                        <input type = "radio" name = "user" id = "Teacher"> &nbsp;Teacher
                         <br>
-                        <input type = "radio" name = "user" id = "Parent"> Parent
+                        <input type = "radio" name = "user" id = "Parent"> &nbsp;Parent
                         <br>
 <!-- User Question Selection -->
                         <h4 class = "title">
                           <br>
                             I have questions about...
                         </h4>
-                        <input type = "radio" name = "needs" id = "where_to_start" > where to start
+                        <input type = "radio" name = "needs" id = "where_to_start" > &nbsp;Where to Start
                         <br>
-                        <input type = "radio" name = "needs" id = "general_process"> the general process
+                        <input type = "radio" name = "needs" id = "general_process"> &nbsp;The General Process
                         <br>
-                        <input type = "radio" name = "needs" id = "where_to_apply"> where to apply
+                        <input type = "radio" name = "needs" id = "where_to_apply"> &nbsp;Where to Apply
                         <br>
-                        <input type = "radio" name = "needs" id = "scholarships"> scholarship information
+                        <input type = "radio" name = "needs" id = "scholarships"> &nbsp;Scholarship Information
                         <br>
-                        <input type = "radio" name = "needs" id = "essay"> essay help
+                        <input type = "radio" name = "needs" id = "essay"> &nbsp;Essay Help
                         <br>
-                        <input type = "radio" name = "needs" id = "common_app"> the CommonApp and CoalitionApp
+                        <input type = "radio" name = "needs" id = "common_app"> &nbsp;The Common App and  The Coalition App
                         <br>
-                        <input type = "radio" name = "needs" id = "recc_letters"> writing reccomendation letters
+                        <input type = "radio" name = "needs" id = "recc_letters"> &nbsp;Writing Recommendation Letters
                         <br>
                         <br>
 <!-- Dropdown for Location Selection -->
@@ -287,9 +299,17 @@
             </div>
         </div>
        <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
-<<<<<<< HEAD
         </body>
-=======
+
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Jumpstart to College</strong>&nbsp;2019
+            <br>Created in <strong>Kirkland, Washington</strong>
+            </p>
+          </div>
+        </footer>
+        </body>
 
         <footer class="footer">
           <div class="content has-text-centered">
@@ -299,7 +319,6 @@
           </div>
         </footer>
 
->>>>>>> 71a3dc8e10e91a384ebaa17ec941ebfbfa724969
 <!-- Creds. (Maybe put menu here?) -->
                     <div>
                     </body>
