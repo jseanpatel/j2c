@@ -43,7 +43,7 @@
    if (isSignedIn) {
      authorizeButton.style.display = 'none';
      signoutButton.style.display = 'block';
-     listUpcomingEvents();
+     // listUpcomingEvents();
    } else {
      authorizeButton.style.display = 'block';
      signoutButton.style.display = 'none';
@@ -103,6 +103,45 @@
    });
  }
 
+ function makeTestingEvent() {
+  var event = {
+    'summary': 'Google I/O 2015',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2015-05-28T09:00:00-07:00',
+      'timeZone': 'America/Los_Angeles'
+    },
+    'end': {
+      'dateTime': '2015-05-28T17:00:00-07:00',
+      'timeZone': 'America/Los_Angeles'
+    },
+    'recurrence': [
+      'RRULE:FREQ=DAILY;COUNT=2'
+    ],
+    'attendees': [
+      {'email': 'lpage@example.com'},
+      {'email': 'sbrin@example.com'}
+    ],
+    'reminders': {
+      'useDefault': false,
+      'overrides': [
+        {'method': 'email', 'minutes': 24 * 60},
+        {'method': 'popup', 'minutes': 10}
+      ]
+    }
+  };
+  
+  var request = gapi.client.calendar.events.insert({
+    'calendarId': 'primary',
+    'resource': event
+  });
+  
+  request.execute(function(event) {
+    appendPre('Event created: ' + event.htmlLink);
+  });
+ }
+
 // index.html
 
 var i = 0;
@@ -126,14 +165,13 @@ function addTopic(id) {
 }
 
 function getInfo(id) {
-  if (sessionStorage.getItem(id) == true) {
+  if (sessionStorage.getItem(id)) {
     switch(id) {
 /** users */
       case 'Junior':
-        "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
-        break;
+        return "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
       case 'Senior':
-/**    "1. Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you're supposed to be.!" */
+        return 'Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you are supposed to be!';
       case 'Teacher':
 /**    "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals" */
       case 'Parent':
@@ -262,6 +300,9 @@ window.onload = function printInfo() {
   
   for (i=0; i<=sessionStorage.length-1; i++)  {  
         var key = sessionStorage.key(i);  
-        document.getElementById('content').innerHTML = getInfo(key)
-    }  
+        document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />" + "<br />"
+        document.getElementById('content').innerHTML += key + " : "
+        document.getElementById('content').innerHTML += getInfo(key) 
+        
+  }
 }
