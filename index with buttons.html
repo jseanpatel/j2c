@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" type="text/css" href="aqfront.css">
 
 
   <title>J2C - Home</title>
@@ -60,7 +60,7 @@
       <nav class="navbar is-white">
         <div class="container">
           <div class="navbar-brand has-background-white is-4">
-            <a class="navbar-item has-background-white" style="font-size:30px;" href="index.html"><i
+            <a align=left class="navbar-item has-background-white" style="font-size:30px;" href="index.html"><i
                 class="zoom fas fa-graduation-cap fa-2x"></i></a>
             <span class="navbar-burger burger" data-target="navbarMenu">
               <span></span>
@@ -167,13 +167,13 @@
 
 
         <h4 class="title"> <i> I am a...</i>  </h4>
-        <a class="button is-info text is-centered" type="radio"  name="user" id="Junior" onclick="addTopic('Junior');"> &nbsp;HS Junior</a>
-
-        <a class="button is-info text is-centered" type="radio" name="user" id="Senior" onclick="addTopic('Senior');"> &nbsp;HS Senior</a>
-
-        <a class="button is-info text is-centered" type="radio" name="user" id="Teacher" onclick="addTopic('Teacher');"> &nbsp;Teacher</a>
-
-        <a class="button is-info text is-centered" type="radio" name="user" id="Parent" onclick="addTopic('Parent');"> &nbsp;Parent</a>
+        <input type="radio" name="user" id="Junior" onclick="addTopic('Junior');"> &nbsp;HS Junior
+        <br>
+        <input type="radio" name="user" id="Senior" onclick="addTopic('Senior');"> &nbsp;HS Senior
+        <br>
+        <input type="radio" name="user" id="Teacher" onclick="addTopic('Teacher');"> &nbsp;Teacher
+        <br>
+        <input type="radio" name="user" id="Parent" onclick="addTopic('Parent');"> &nbsp;Parent
         <br>
         <!-- User Question Selection -->
         <i>
@@ -183,19 +183,19 @@
           </h4>
         </i>
         <br>
-        <a class="button is-info text is-centered" type="radio" name="needs" id="where_to_start" onclick="addTopic('where_to_start');"> &nbsp;Where to Start</a>
-
-        <a class="button is-info text is-centered" type="radio" name="needs" id="general_process" onclick="addTopic('general_process');"> &nbsp;The General Process</a>
-
-        <a class="button is-info text is-centered" type="radio" name="needs" id="where_to_apply" onclick="addTopic('where_to_apply');"> &nbsp;Where to Apply</a>
-        <br><br>
-        <a class="button is-info text is-centered" type="radio" name="needs" id="common_app" onclick="addTopic('common_app');"> &nbsp;The Common App and The Coalition App</a>
-        <br><br>
-        <a class="button is-info text is-centered" type="radio" name="needs" id="scholarships" onclick="addTopic('scholarships');"> &nbsp;Scholarship Information</a>
-
-        <a class="button is-info text is-centered" type="radio" name="needs" id="essay" onclick="addTopic('essay');"> &nbsp;Essay Help</a>
-
-        <a class="button is-info text is-centered" type="radio" name="needs" id="recc_letters" onclick="addTopic('recc_letters');"> &nbsp;Writing Recommendation Letters</a>
+        <input type="radio" name="needs" id="where_to_start" onclick="addTopic('where_to_start');"> &nbsp;Where to Start
+        <br>
+        <input type="radio" name="needs" id="general_process" onclick="addTopic('general_process');"> &nbsp;The General Process
+        <br>
+        <input type="radio" name="needs" id="where_to_apply" onclick="addTopic('where_to_apply');"> &nbsp;Where to Apply
+        <br>
+        <input type="radio" name="needs" id="scholarships" onclick="addTopic('scholarships');"> &nbsp;Scholarship Information
+        <br>
+        <input type="radio" name="needs" id="essay" onclick="addTopic('essay');"> &nbsp;Essay Help
+        <br>
+        <input type="radio" name="needs" id="common_app" onclick="addTopic('common_app');"> &nbsp;The Common App and The Coalition App
+        <br>
+        <input type="radio" name="needs" id="recc_letters" onclick="addTopic('recc_letters');"> &nbsp;Writing Recommendation Letters
         <br>
         <br>
         <!-- Dropdown for Location Selection -->
