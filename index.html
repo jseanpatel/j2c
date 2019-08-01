@@ -24,7 +24,7 @@
     img {
         padding: 5px;
         border: 1px solid #ccc;
-      /* 
+      /*
         margin-left: 10px;
         margin-right: 10px;
       */
@@ -38,8 +38,8 @@
     <div class="hero-head">
         <nav class="navbar is-white">
             <div class="container">
-                <div class="navbar-brand has-background-dark">
-                    <a class="navbar-item" style="font-size:30px;" href="index.html"><strong>J2C</strong></a>
+                <div class="navbar-brand has-background-white is-4">
+                    <a class="navbar-item" style="font-size:30px;" href="index.html"><i class="fas fa-graduation-cap fa-2x"></i></a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
                         <span></span>
@@ -55,7 +55,7 @@
                                 <li><a href="j2c.html">J2C</a></li>
                                 <li><a href="calendar.html">Calendar</a></li>
                                 <li><a href="bio.html">Team</a></li>
-                                <li><a href="">Help</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -72,11 +72,11 @@
             <h1 class="title is-2">
               Jumpstart to College
             </h1>
-            <br>
+            <p></p>
             <h2 class="subtitle is-4 is-italic">
               <p id="titleText"></p>
             </h2>
-            <br>
+            <p></p>
             <p class="has-text-centered">
               <a class="button is-medium is-info is-outlined" href="#welcome">
                 Let's go!
@@ -97,8 +97,9 @@
       </div>
     </div>
   </section>
-  <div class = "columns">
+  <div class = "container has-text-centered">
   <div class="column">
+
     <h1 class="title is-2">
       Jumpstart to College!
     </h1>
@@ -127,24 +128,25 @@
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </h2>
+    <p><p/>
     <br>
-    <h2 class="subtitle is-4">
+    <strong><h2 class="subtitle is-4">
       Take control of your future!
-    </h2>
+    </h2></strong>
     </div>
 
     <br>
-    <br>
 
-    <br>
 <!-- User Characteristic Selection -->
-<div class = "columns">
+<div class = "container has-text-centered">
 <div class="column is-centered">
 
-                        <h4 class = "title">
-                            <a name = "Iama"> </a>
-                            I am a....
-                        </h4>
+    <i><h4 class = "title">
+      <br>
+        <a name = "Iama"> </a>
+        I am a...
+    </h4></i>
+    <br>
                         <input type = "radio" name = "user" id = "Junior" > &nbsp;HS Junior
                         <br>
                         <input type = "radio" name = "user" id = "Senior"> &nbsp;HS Senior
@@ -154,10 +156,11 @@
                         <input type = "radio" name = "user" id = "Parent"> &nbsp;Parent
                         <br>
 <!-- User Question Selection -->
-                        <h4 class = "title">
-                          <br>
-                            I have questions about...
-                        </h4>
+<i><h4 class = "title">
+  <br>
+    I have questions about...
+</h4></i>
+<br>
                         <input type = "radio" name = "needs" id = "where_to_start" > &nbsp;Where to Start
                         <br>
                         <input type = "radio" name = "needs" id = "general_process"> &nbsp;The General Process
@@ -174,10 +177,10 @@
                         <br>
                         <br>
 <!-- Dropdown for Location Selection -->
-                        <h4 class = "title is-2">
-                          I am from....
-                        </h4>
-
+<i><h4 class = "title is-2">
+  I am from...
+</h4></i>
+<br>
 
 
                       <div class="dropdown is-hoverable is-up is-mobile">
@@ -287,6 +290,7 @@
                             <option
                             value = "Wyoming" id = "Wyoming">Wyoming</option>
                           </select>
+                          <button class = "button is-centered" name = "gobtn" onclick="makeCalendar();">Go!</button>
                         </div>
                           </div>
                         </div>
@@ -298,7 +302,7 @@
                 </div>
             </div>
         </div>
-       <button class = "button is-normal" name = "gobtn" onclick="makeCalendar();">Go!</button>
+
         </body>
 
         <footer class="footer">
@@ -311,13 +315,6 @@
         </footer>
         </body>
 
-        <footer class="footer">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Jumpstart to College</strong>&nbsp;2019
-            </p>
-          </div>
-        </footer>
 
 <!-- Creds. (Maybe put menu here?) -->
                     <div>
