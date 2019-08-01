@@ -29,7 +29,7 @@
   </style>
 </head>
 
-<body onload="printInfo();">
+<body onload="printInfo()">
   <section class="hero is-fullheight is-default is-bold">
     <div class="hero-head">
         <nav class="navbar is-white">
@@ -70,6 +70,7 @@
             <br>
             <h2 class="subtitle is-4 is-italic">
               <p id="titleText"></p>
+              <button class="button" onclick="makeTestingEvent()"> Make Event </button>
             </h2>
             <br>
             <p class="has-text-centered">
@@ -84,10 +85,6 @@
     </div>
     </div>
   </div>
-
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="display: none;">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
 
 
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
