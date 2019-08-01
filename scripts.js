@@ -5,7 +5,7 @@
  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
  // Authorization scopes required by the API; multiple scopes can be
  // included, separated by spaces.
- var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+ var SCOPES = "https://www.googleapis.com/auth/calendar.events";
  var authorizeButton = document.getElementById('authorize_button');
  var signoutButton = document.getElementById('signout_button');
  /**
@@ -103,31 +103,30 @@
    });
  }
 
-//  function makeTestingEvent() {
-//   var event = {
+ function makeTestingEvent() {
+  var event = {
    
-//     "start": {
-//       "dateTime": "2015-05-28T09:00:00-07:00",
-//       "timeZone": "America/Los_Angeles"
-//     },
-//     "end": {
-//       "dateTime": "2015-05-28T17:00:00-07:00",
-//       "timeZone": "America/Los_Angeles"
-//     }
+    "start": {
+      "dateTime": "2015-05-28T09:00:00-07:00",
+      "timeZone": "America/Los_Angeles"
+    },
+    "end": {
+      "dateTime": "2015-05-28T17:00:00-07:00",
+      "timeZone": "America/Los_Angeles"
+    }
   
-//   };
+  };
   
-//   var request = gapi.client.calendar.events.insert({
-//     "calendarId": "primary",
-//     "resource": event
-//   });
+  var request = gapi.client.calendar.events.insert({
+    "calendarId": "primary",
+    "resource": event
+  });
   
-//   request.execute(function(event) {
-//     appendPre("Event created: " + event.htmlLink);
-//   });
-//  }
+  request.execute(function(event) {
+    appendPre("Event created: " + event.htmlLink);
+  });
+ }
 
-// index.html
 
 var i = 0;
 var txt =  'A simple tool to organize your college applications.';
@@ -291,3 +290,39 @@ window.onload = function printInfo() {
         
   }
 }
+
+ /**
+   * Sample JavaScript code for calendar.events.insert
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
+
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("YOUR_API_KEY");
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.calendar.events.insert({
+      "resource": {
+        "end": {},
+        "start": {}
+      }
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+  });
