@@ -103,18 +103,20 @@
    });
  }
 
- function makeTestingEvent() {
+ function makeEvent(id) {
+   var eventInformation = getEventInfo(id)
   var event = {
-    'summary': 'Google I/O 2015',
-    'location': '800 Howard St., San Francisco, CA 94103',
-    'description': 'A chance to hear more about Google\'s developer products.',
+    'summary': eventInformation[0],
+    'location': eventInformation[1],
+    'description': eventInformation[2],
     'start': {
-      'dateTime': '2019-05-24T07:00:00-00:00',
-      'timeZone': 'America/Los_Angeles'
+      // '2019-05-24T04:00:00-00:00' ------> 2019-05-28T16:00:00-00:00'
+      'dateTime': eventInformation[3],
+      'timeZone': 'America/New_York'
     },
     'end': {
-      'dateTime': '2019-05-28T19:00:00-00:00',
-      'timeZone': 'America/Los_Angeles'
+      'dateTime': eventInformation[4],
+      'timeZone': 'America/New_York'
     },
     'recurrence': [
       'RRULE:FREQ=DAILY;COUNT=1'
@@ -140,6 +142,13 @@
     appendPre("Your events have been added to your calendar: " + event.htmlLink);
   });
  }
+
+ function addEventsToCalendar() {
+  for (i=0; i<=sessionStorage.length-1; i++)  {
+    var key = sessionStorage.key(i)
+    makeEvent(key)
+  }
+}
 
 
 var i = 0;
@@ -208,6 +217,8 @@ window.onload = function printInfo() {
     gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
   });
 
+// For getting the insight information.
+
   function getInfo(id) {
     if (sessionStorage.getItem(id)) {
       switch(id) {
@@ -232,7 +243,141 @@ window.onload = function printInfo() {
         case 'essay':
   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
         case 'common_app':
-  /**    "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem" */
+          return "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
+        case 'recc_letters':
+  /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
+  /** State Search */
+        case 'Alabama':
+  /**    "something about this state" */
+        case 'Alaska':
+  /**    "something about this state" */
+        case 'Arizona':
+  /**    "something about this state" */
+        case 'Arkansas':
+  /**    "something about this state" */
+        case 'California':
+  /**    "something about this state" */
+        case 'Colorado':
+  /**    "something about this state" */
+        case 'Connecticut':
+  /**    "something about this state" */
+        case 'Delaware':
+  /**    "something about this state" */
+        case 'Florida':
+  /**    "something about this state" */
+        case 'Georgia':
+  /**    "something about this state" */
+        case 'Hawaii':
+  /**    "something about this state" */
+        case 'Idaho':
+  /**    "something about this state" */
+        case 'Illinois':
+  /**    "something about this state" */
+        case 'Indiana':
+  /**    "something about this state" */
+        case 'Iowa':
+  /**    "something about this state" */
+        case 'Kansas':
+  /**    "something about this state" */
+        case 'Kentucky':
+  /**    "something about this state" */
+        case 'Louisiana':
+  /**    "something about this state" */
+        case 'Maine':
+  /**    "something about this state" */
+        case 'Maryland':
+  /**    "something about this state" */
+        case 'Massachusetts':
+  /**    "something about this state" */
+        case 'Michigan':
+  /**    "something about this state" */
+        case 'Minnesota':
+  /**    "something about this state" */
+        case 'Mississippi':
+  /**    "something about this state" */
+        case 'Missouri':
+  /**    "something about this state" */
+        case 'Montana':
+  /**    "something about this state" */
+        case 'Nebraska':
+  /**    "something about this state" */
+        case 'Nevada':
+  /**    "something about this state" */
+        case 'NewHampshire':
+  /**    "something about this state" */
+        case 'NewJersey':
+  /**    "something about this state" */
+        case 'NewMexico':
+  /**    "something about this state" */
+        case 'NewYork':
+  /**    "something about this state" */
+        case 'NorthCarolina':
+  /**    "something about this state" */
+        case 'NorthDakota':
+  /**    "something about this state" */
+        case 'Ohio':
+  /**    "something about this state" */
+        case 'Oklahoma':
+  /**    "something about this state" */
+        case 'Oregon':
+  /**    "something about this state" */
+        case 'Pennsylvania':
+  /**    "something about this state" */
+        case 'RhodeIsland':
+  /**    "something about this state" */
+        case 'SouthCarolina':
+  /**    "something about this state" */
+        case 'SouthDakota':
+  /**    "something about this state" */
+        case 'Tennessee':
+  /**    "something about this state" */
+        case 'Texas':
+  /**    "something about this state" */
+        case 'Utah':
+  /**    "something about this state" */
+        case 'Vermont':
+  /**    "something about this state" */
+        case 'Virginia':
+  /**    "something about this state" */
+        case 'Washington':
+  /**    "something about this state" */
+        case 'WestVirginia':
+  /**    "something about this state" */
+        case 'Wisconsin':
+  /**    "something about this state" */
+        case 'Wyoming':
+  /**    "something about this state" */
+      }
+    }
+  }
+
+  // For getting the event information.
+
+  function getEventInfo(id) {
+    if (sessionStorage.getItem(id)) {
+      switch(id) {
+  /** users */
+        case 'Junior':
+          return "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
+        case 'Senior':
+          return 'Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you are supposed to be!';
+        case 'Teacher':
+  /**    "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals" */
+        case 'Parent':
+  /**    "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor" */
+  /** Information Search */
+        case 'where_to_start':
+  /**    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" */
+        case 'general_process':
+  /**    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident." */
+        case 'where_to_apply':
+  /**    "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae" */
+        case 'scholarships':
+  /**    "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat" */
+        case 'essay':
+  /**    "Et harum quidem rerum facilis est et expedita distinctio." */
+        case 'common_app':
+          return ['The Common Application/ Coalition Application Deadline', 'Your dream college.', 'The Common App is a nationally standardized application tool where you will choose and fill out college applications', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
         case 'recc_letters':
   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
   /** State Search */
