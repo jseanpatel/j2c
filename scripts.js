@@ -121,14 +121,17 @@ function startGoing() {
     listUpcomingEvents();
 }
 
+function addTopic(id) {
+  sessionStorage.setItem(id, true)
+}
 
-
-function get_info(id) {
+function getInfo(id) {
   if (sessionStorage.getItem(id) == true) {
     switch(id) {
 /** users */
       case 'Junior':
-/**    "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades" */
+        "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
+        break;
       case 'Senior':
 /**    "1. Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you're supposed to be.!" */
       case 'Teacher':
@@ -253,4 +256,12 @@ function get_info(id) {
 /**    "something about this state" */
     }
   }
+}
+
+window.onload = function printInfo() {
+  
+  for (i=0; i<=sessionStorage.length-1; i++)  {  
+        var key = sessionStorage.key(i);  
+        document.getElementById('content').innerHTML = getInfo(key)
+    }  
 }
