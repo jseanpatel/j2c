@@ -172,7 +172,7 @@ function addTopic(id) {
 }
 
 window.onload = function printInfo() {
-  document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />"
+  document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />" + "<br />"
   for (i=0; i<=sessionStorage.length-1; i++)  {  
         var key = sessionStorage.key(i);  
         document.getElementById('content').innerHTML += key + " : " 
@@ -242,7 +242,7 @@ window.onload = function printInfo() {
   /**    "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat" */
         case 'essay':
   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
-        case 'common_app':
+        case '':
           return "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
         case 'recc_letters':
   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
