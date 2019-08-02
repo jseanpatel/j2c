@@ -156,16 +156,28 @@ function addEventsToCalendar() {
 var i = 0;
 var speed = 50;
 
-function writeTitleText(isIndex) {
-      if (isIndex) {
-            txt = 'A simple tool to organize your college applications.';
-      } else {
-            txt = 'A roadmap through the admissions process.'
-      }
+
+// 'A simple tool to organize your college applications.';
+// 'A roadmap through the admissions process.'
+var txt;
+
+function writeTitleText() {
+      txt = 'A simple tool to organize your college applications.';
       if (i < txt.length) {
             document.getElementById("titleText").innerHTML += txt.charAt(i);
             i++;
             setTimeout(writeTitleText, speed);
+      }
+}
+
+var x = 0;
+
+function writeTitleTextJ2C() {
+      txt = 'A roadmap through the admissions process.';
+      if (x < txt.length) {
+            document.getElementById("titleTextJ2C").innerHTML += txt.charAt(x);
+            x++;
+            setTimeout(writeTitleTextJ2C, speed);
       }
 }
 

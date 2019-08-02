@@ -49,7 +49,7 @@
 
 </head>
 
-<body onload="writeTitleText(true)">
+<body onload="writeTitleText('A simple tool to organize your college applications.', 'titleText')">
   <script src="..\[jumpstart-to-college]\[script].js"></script>
   <!-- Navigation Bar - Basic Styling -->
   <section class="hero is-fullheight is-default is-bold">
@@ -105,8 +105,8 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
+    
+    
     <div class="hero-foot">
       <div class="column">
         <div class="tabs is-centered">
@@ -176,10 +176,11 @@
 
         <div class="dropdown is-hoverable is-up is-mobile">
           <div class="dropdown-trigger">
+              <div class="select">
             <button class="button is-medium is-info is-outlined" aria-haspopup="true" aria-controls="dropdown-menu">
-              Select a state! <br>
-              </span>
-              <select class="select">
+              <div class="select"></div>
+            
+              <select>
                 <option value="Alabama" id="Alabama" onclick="addTopic('Alabama');">Alabama</option>
                 <option value="Alaska" id="Alaska" onclick="addTopic('Alaska');">Alaska</option>
                 <option value="Arizona" id="Arizona" onclick="addTopic('Arizona');">Arizona</option>
@@ -235,7 +236,12 @@
                 </option>
                 <option value="Wisconsin" id="Wisconsin" onclick="addTopic('Wisconsin');">Wisconsin</option>
                 <option value="Wyoming" id="Wyoming" onclick="addTopic('Wyoming');">Wyoming</option>
-              </select>
+            
+              
+            </select>
+          </button>
+          </div>
+          
               <button class="button is-medium is-info is-outlined" name="gobtn" onclick="makeCalendar();"><a href="calendar.html"> Go!</a></button>
               <br>
               <br>
