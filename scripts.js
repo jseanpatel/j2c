@@ -178,7 +178,7 @@ function addTopic(id) {
 }
 
 window.onload = function printInfo() {
-      document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />" + "<br />"
+      document.getElementById('content').innerHTML = "Here is your curated information based on your preferences." + "<br />" + "<br />"
       for (i = 0; i <= sessionStorage.length - 1; i++) {
             var key = sessionStorage.key(i);
             document.getElementById('content').innerHTML += formatKey(key) + " : "
@@ -242,7 +242,7 @@ function getInfo(id) {
             switch (id) {
                   /** users */
                   case 'Junior':
-                        return "1. Prepare and Take Standardized Tests 2. Consider Possible Majors 3. Research Colleges 4. Search for Scholarships 5. Plan to Maximize Summer 6. Get Good to Great Grades";
+                        return "1. Prepare and take standardized tests 2. Consider possible majors 3. Research colleges 4. Search for scholarships 5. Plan to maximize summer 6. Get good to great grades";
                   case 'Senior':
                         return 'Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you are supposed to be!';
                   case 'Teacher':
