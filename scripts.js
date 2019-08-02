@@ -154,10 +154,14 @@
 
 
 var i = 0;
-var txt =  'A simple tool to organize your college applications.';
 var speed = 50;
 
-function writeTitleText() {
+function writeTitleText(isIndex) {
+  if (isIndex) {
+        txt = 'A simple tool to organize your college applications.';
+  } else {
+        txt = 'A roadmap through the admissions process.'
+  }
   if (i < txt.length) {
     document.getElementById("titleText").innerHTML += txt.charAt(i);
     i++;
@@ -174,21 +178,12 @@ function addTopic(id) {
 }
 
 window.onload = function printInfo() {
-<<<<<<< HEAD
   document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />"
   for (i=0; i<=sessionStorage.length-1; i++)  {
         var key = sessionStorage.key(i);
         document.getElementById('content').innerHTML += key + " : "
         document.getElementById('content').innerHTML += getInfo(key)
 
-=======
-  document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />" + "<br />"
-  for (i=0; i<=sessionStorage.length-1; i++)  {  
-        var key = sessionStorage.key(i);  
-        document.getElementById('content').innerHTML += key + " : " 
-        document.getElementById('content').innerHTML += getInfo(key) 
-        
->>>>>>> 7f1ee2a36d7cb7b3274e761682580fe0bc5d5d94
   }
 }
 
