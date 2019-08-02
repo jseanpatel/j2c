@@ -14,6 +14,8 @@
  function handleClientLoad() {
    gapi.load('client:auth2', initClient);
  }
+
+ 
  /**
   *  Initializes the API client library and sets up sign-in state
   *  listeners.
@@ -122,7 +124,7 @@
       'RRULE:FREQ=DAILY;COUNT=1'
     ],
     'attendees': [
-    
+
     ],
     'reminders': {
       'useDefault': false,
@@ -132,12 +134,12 @@
       ]
     }
   };
-  
+
   var request = gapi.client.calendar.events.insert({
     "calendarId": "primary",
     "resource": event
   });
-  
+
   request.execute(function(event) {
     appendPre("Your events have been added to your calendar: " + event.htmlLink);
   });
@@ -173,11 +175,11 @@ function addTopic(id) {
 
 window.onload = function printInfo() {
   document.getElementById('content').innerHTML = "Here is some information based on your preferences." + "<br />"
-  for (i=0; i<=sessionStorage.length-1; i++)  {  
-        var key = sessionStorage.key(i);  
-        document.getElementById('content').innerHTML += key + " : " 
-        document.getElementById('content').innerHTML += getInfo(key) 
-        
+  for (i=0; i<=sessionStorage.length-1; i++)  {
+        var key = sessionStorage.key(i);
+        document.getElementById('content').innerHTML += key + " : "
+        document.getElementById('content').innerHTML += getInfo(key)
+
   }
 }
 

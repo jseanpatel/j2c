@@ -18,12 +18,6 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script type="text/javascript" src="scripts.js"></script>
   <style type="text/css">
-
-  html {
-    scroll-behavior: smooth;
-    speed: 50;
-  }
-
 .zoom {
   transition: transform .2s; /* Animation */
 
@@ -36,6 +30,7 @@
 
     html,
     body {
+
       font-family: 'Open Sans';
     }
 
@@ -47,20 +42,8 @@
         margin-right: 10px;
       */
     }
-    input[type="radio"]:checked+label { font-weight: bold; }
-    
-    button:active {
-      background-color: #000080;
-      transform: translateY(4px);
-
-    }
-
-    button:focus {
-      background-color: #000080;
-    }
-
+}
   </style>
-
 </head>
 
 <body onload=writeTitleText()>
@@ -85,8 +68,8 @@
               <div class="tabs is-right">
                 <ul>
                   <li class="is-active"><a href="index.html">Home</a></li>
-                  <li><a href="j2c.html">Mission</a></li>
-                  <li><a href="calendar.html">J2C Tool</a></li>
+                  <li><a href="j2c.html">J2C</a></li>
+                  <li><a href="calendar.html">Calendar</a></li>
                   <li><a href="bio.html">Team</a></li>
 
                 </ul>
@@ -111,7 +94,7 @@
             </h2>
             <p></p>
             <p class="has-text-centered">
-              <a href="#scroll" class="button is-medium is-info is-outlined">
+              <a class="button is-medium is-info is-outlined" href="#welcome">
                 Let's go!
               </a>
             </p>
@@ -130,21 +113,40 @@
       </div>
     </div>
   </section>
-  <div id="scroll" class="container has-text-centered">
+  <div class="container has-text-centered">
     <div class="column">
 
-      <h1  class="title is-2">
+      <h1 class="title is-2">
         <i> What is this? </i>
       </h1>
       <br>
-      <h2>
-        Welcome to Jumpstart to College! <br> Calling the college application process stressful is an understatement. But,
-        we want to make <br> that a bit easier and more accessible for everyone. <br> This site is packed with information,
-        calendars, and resources for all students entering the college aplication process: <br> first-generation,
-        low-income, private school and public school students.  <br> We also have information for teachers to assist them in writing
+      <h2> <a name="welcome"> </a>
+        Welcome to Jumpstart to College! Calling the college application process stressful is an understatement. But,
+        we want to make that a bit easier and more accessible for everyone. This site is packed with information,
+        calendars, and resources for all students entering the college aplication process - first-generation,
+        low-income,
+        private school and public school students. We also have information for teachers to assist them in writing
         reccomendations and ensuring student success! </h2>
       <br>
-
+      <h2 class="subtitle is-4">
+        Why this matters:
+      </h2>
+      <h2> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </h2>
+      <br>
+      <h2 class="subtitle is-4">
+        Who is this for:
+      </h2>
+      <h2> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </h2>
       <p>
         <p />
         <br>
@@ -159,14 +161,13 @@
 
 
         <h4 class="title"> <i> I am a...</i>  </h4>
-        <a class="button is-info text is-centered" type="radio"  name="user" id="Junior" onclick="addTopic('Junior');"> &nbsp;HS Junior</a>
-        <a class="button is-medium is-info is-outlined" type="radio"  name="user" id="Junior" onclick="addTopic('Junior');"> &nbsp;HS Junior</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="user" id="Senior" onclick="addTopic('Senior');"> &nbsp;HS Senior</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="user" id="Teacher" onclick="addTopic('Teacher');"> &nbsp;Teacher</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="user" id="Parent" onclick="addTopic('Parent');"> &nbsp;Parent</a>
+        <input type="radio" name="user" id="Junior" onclick="addTopic('Junior');"> &nbsp;HS Junior
+        <br>
+        <input type="radio" name="user" id="Senior" onclick="addTopic('Senior');"> &nbsp;HS Senior
+        <br>
+        <input type="radio" name="user" id="Teacher" onclick="addTopic('Teacher');"> &nbsp;Teacher
+        <br>
+        <input type="radio" name="user" id="Parent" onclick="addTopic('Parent');"> &nbsp;Parent
         <br>
         <!-- User Question Selection -->
         <i>
@@ -176,19 +177,19 @@
           </h4>
         </i>
         <br>
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="where_to_start" onclick="addTopic('where_to_start');"> &nbsp;Where to Start</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="general_process" onclick="addTopic('general_process');"> &nbsp;The General Process</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="where_to_apply" onclick="addTopic('where_to_apply');"> &nbsp;Where to Apply</a>
-        <br><br>
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="common_app" onclick="addTopic('common_app');"> &nbsp;The Common App and The Coalition App</a>
-        <br><br>
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="scholarships" onclick="addTopic('scholarships');"> &nbsp;Scholarship Information</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="essay" onclick="addTopic('essay');"> &nbsp;Essay Help</a>
-
-        <a class="button is-medium is-info is-outlined" type="radio" name="needs" id="recc_letters" onclick="addTopic('recc_letters');"> &nbsp;Writing Recommendation Letters</a>
+        <input type="radio" name="needs" id="where_to_start" onclick="addTopic('where_to_start');"> &nbsp;Where to Start
+        <br>
+        <input type="radio" name="needs" id="general_process" onclick="addTopic('general_process');"> &nbsp;The General Process
+        <br>
+        <input type="radio" name="needs" id="where_to_apply" onclick="addTopic('where_to_apply');"> &nbsp;Where to Apply
+        <br>
+        <input type="radio" name="needs" id="scholarships" onclick="addTopic('scholarships');"> &nbsp;Scholarship Information
+        <br>
+        <input type="radio" name="needs" id="essay" onclick="addTopic('essay');"> &nbsp;Essay Help
+        <br>
+        <input type="radio" name="needs" id="common_app" onclick="addTopic('common_app');"> &nbsp;The Common App and The Coalition App
+        <br>
+        <input type="radio" name="needs" id="recc_letters" onclick="addTopic('recc_letters');"> &nbsp;Writing Recommendation Letters
         <br>
         <br>
         <!-- Dropdown for Location Selection -->
@@ -203,7 +204,7 @@
         <div class="dropdown is-hoverable is-up is-mobile">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-              Select a state! <br>
+              Select a state!
               </span>
               <select>
                 <option value="Alabama" id="Alabama" onclick="addTopic('Alabama');">Alabama</option>
@@ -280,8 +281,7 @@
   <div class="content has-text-centered">
     <p>
       <strong>Jumpstart to College</strong>&nbsp;2019
-      <br>Created in <strong>Kirkland, Washington</strong><br>
-      <span class="title is-4"><a href="https://github.com/jseanpatel/J2C#" target="_blank"><i class="fab fa-github-square"></i></a></span>
+      <br>Created in <strong>Kirkland, Washington</strong>
     </p>
   </div>
 </footer>

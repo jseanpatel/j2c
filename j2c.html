@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script type="text/javascript" src="scripts.js"></script>
-    <style type="text/css">
+
+<style type="text/css">
 
   .zoom {
     transition: transform .2s; /* Animation */
@@ -32,6 +33,9 @@
       body {
 
         font-family: 'Open Sans';
+        scroll-behavior: smooth;
+        speed: 50;
+        }
       }
 
       img {
@@ -67,8 +71,8 @@
                                 <ul>
                                     <li><a href="index.html">Home</a>
                                     <li>
-                                    <li class="is-active"><a href="j2c.html">J2C</a></li>
-                                    <li><a href="calendar.html">Calendar</a></li>
+                                    <li class="is-active"><a href="j2c.html">Mission</a></li>
+                                    <li><a href="calendar.html">J2C Tool</a></li>
                                     <li><a href="bio.html">Team</a></li>
 
                                 </ul>
@@ -83,11 +87,16 @@
                 <div class="columns is-centered">
                     <div class="column is-centered">
                         <h1 class="title is-2">
-                            Tips and Testimonials
+                            Our Mission
                         </h1>
                         <p></p>
                         <h2 class="subtitle is-4 is-italic">
                             <p id="titleText"></p>
+                            <p class="has-text-centered">
+                              <a href="#scroll" class="button is-medium is-info is-outlined">
+                                About us!
+                              </a>
+                            </p>
                         </h2>
                         <p></p>
                     </div>
@@ -97,8 +106,7 @@
         <div class="section">
             <!-- END NAV -->
             <div class="container has-text-centered">
-                <h1 class="title">"The ones who are crazy enough to think they can change the world, are the ones that
-                    do." <br> -Anonymous </h1>
+                <h1 class="title"></h1>
             </div>
         </div>
     </section>
@@ -111,7 +119,7 @@
                     <div class="card-content">
                         <div class="media">
                             <div class="media-content has-text-centered">
-                                <p class="title article-title">According to the National Center for Education
+                                <p class="title article-title" id = "scroll">According to the National Center for Education
                                     Statistics, about 17.0 million students will attend undergraduate programs in the
                                     United States. But, only 12% of them will be first-generation, low-income students.
                                 </p>
