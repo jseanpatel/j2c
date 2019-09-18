@@ -1,6 +1,6 @@
 // Client ID and API key from the Developer Console
-var CLIENT_ID = '65468664004-1ricucbt8rkfcudnri1s93u06qk6ps63.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyB5Jgq0cooeQNrxFF53NBJ0myZUIUj1I7A';
+var CLIENT_ID = '';
+var API_KEY = '';
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 // Authorization scopes required by the API; multiple scopes can be
@@ -8,6 +8,8 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 var SCOPES = "https://www.googleapis.com/auth/calendar.events";
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
+
+const headers = new HttpHeaders().set('Origin', 'http://localhost')
 /**
  *  On load, called to load the auth2 library and API client library.
  */
@@ -274,6 +276,8 @@ function getInfo(id) {
                   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
                   case 'common_app':
                         return "1. Start as early as August 1st by just inputting basic information 2. Utilize the to do list functions and to keep track of deadlines 3. Create one email to use for all CommonApp accounts 4. Look for warning messages 5. Call the college if you have any questions - chances are other people have the same problems.";
+                  case 'coalition_app':
+                        return "1. Start as early as August 1st by just inputting basic information 2. Utilize the to do list functions and to keep track of deadlines 3. Create one email to use for all CommonApp accounts 4. Look for warning messages 5. Call the college if you have any questions - chances are other people have the same problems.";
                   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
                   /** State Search */
                   case 'Alabama':
@@ -406,7 +410,9 @@ function getEventInfo(id) {
                   case 'essay':
                   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
                   case 'common_app':
-                        return ['The Common Application/ Coalition Application Deadline', 'Your dream college.', 'The Common App is a nationally standardized application tool where you will choose and fill out college applications', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
+                        return ['The Common Application Deadline', 'Your dream college.', 'The Common App is a nationally standardized application tool where you will choose and fill out college applications.', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
+                  case 'coaltion_app':
+                        return ['The Coalition Application Deadline', 'Your dream college.', 'The Coalition App is a nationally standardized application tool specifically for marginalized and underrepresented students, where you will choose and fill out college applications.', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
                   case 'recc_letters':
                   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
                   /** State Search */
