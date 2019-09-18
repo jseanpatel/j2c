@@ -16,6 +16,14 @@
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script type="text/javascript" src="scripts.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+  <script>
+    window.onLoadCallback = function () {
+      gapi.auth2.init({
+        client_id: '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com'
+      });
+    }
+  </script>
   <style type="text/css">
     html {
       scroll-behavior: smooth;

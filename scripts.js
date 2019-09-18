@@ -1,6 +1,8 @@
+
+
 // Client ID and API key from the Developer Console
-var CLIENT_ID = '';
-var API_KEY = '';
+var CLIENT_ID = '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyBNfoaom9AG4Flk41_Nh4-DTQ1wQX2k1DM';
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 // Authorization scopes required by the API; multiple scopes can be
@@ -8,8 +10,6 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 var SCOPES = "https://www.googleapis.com/auth/calendar.events";
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
-
-const headers = new HttpHeaders().set('Origin', 'http://localhost')
 /**
  *  On load, called to load the auth2 library and API client library.
  */
@@ -17,6 +17,31 @@ function handleClientLoad() {
       gapi.load('client:auth2', initClient);
 }
 
+// promise that would be resolved when gapi would be loaded
+var gapiPromise = (function(){
+      var deferred = $.Deferred();
+      window.onLoadCallback = function(){
+        deferred.resolve(gapi);
+      };
+      return deferred.promise()
+    }());
+    
+    var authInited = gapiPromise.then(function(){
+      gapi.auth2.init({
+          client_id: '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com'
+        });
+    })
+    
+    
+    $('#btn').click(function(){
+      gapiPromise.then(function(){
+        // will be executed after gapi is loaded
+      });
+    
+      authInited.then(function(){
+        // will be executed after gapi is loaded, and gapi.auth2.init was called
+      });
+    });
 
 /**
  *  Initializes the API client library and sets up sign-in state
@@ -276,8 +301,6 @@ function getInfo(id) {
                   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
                   case 'common_app':
                         return "1. Start as early as August 1st by just inputting basic information 2. Utilize the to do list functions and to keep track of deadlines 3. Create one email to use for all CommonApp accounts 4. Look for warning messages 5. Call the college if you have any questions - chances are other people have the same problems.";
-                  case 'coalition_app':
-                        return "1. Start as early as August 1st by just inputting basic information 2. Utilize the to do list functions and to keep track of deadlines 3. Create one email to use for all CommonApp accounts 4. Look for warning messages 5. Call the college if you have any questions - chances are other people have the same problems.";
                   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
                   /** State Search */
                   case 'Alabama':
@@ -410,9 +433,7 @@ function getEventInfo(id) {
                   case 'essay':
                   /**    "Et harum quidem rerum facilis est et expedita distinctio." */
                   case 'common_app':
-                        return ['The Common Application Deadline', 'Your dream college.', 'The Common App is a nationally standardized application tool where you will choose and fill out college applications.', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
-                  case 'coaltion_app':
-                        return ['The Coalition Application Deadline', 'Your dream college.', 'The Coalition App is a nationally standardized application tool specifically for marginalized and underrepresented students, where you will choose and fill out college applications.', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
+                        return ['The Common Application/ Coalition Application Deadline', 'Your dream college.', 'The Common App is a nationally standardized application tool where you will choose and fill out college applications', '2020-01-01T04:00:00-00:00', '2020-01-01T16:00:00-00:00'];
                   case 'recc_letters':
                   /**    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." */
                   /** State Search */
