@@ -25,7 +25,7 @@ Thank you to the entire Kirkland CSSI team for their time and dedication in enri
 
 ## Deployment
 
-This website can be reached at [j2c.apply](j2c.apply).
+This website can be reached at [https://jseanpatel.github.io/J2C/](https://jseanpatel.github.io/J2C/).
 
 ## License
 
