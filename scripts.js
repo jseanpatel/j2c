@@ -17,31 +17,6 @@ function handleClientLoad() {
       gapi.load('client:auth2', initClient);
 }
 
-// promise that would be resolved when gapi would be loaded
-var gapiPromise = (function(){
-      var deferred = $.Deferred();
-      window.onLoadCallback = function(){
-        deferred.resolve(gapi);
-      };
-      return deferred.promise()
-    }());
-    
-    var authInited = gapiPromise.then(function(){
-      gapi.auth2.init({
-          client_id: '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com'
-        });
-    })
-    
-    
-    $('#btn').click(function(){
-      gapiPromise.then(function(){
-        // will be executed after gapi is loaded
-      });
-    
-      authInited.then(function(){
-        // will be executed after gapi is loaded, and gapi.auth2.init was called
-      });
-    });
 
 /**
  *  Initializes the API client library and sets up sign-in state
@@ -270,9 +245,11 @@ function execute() {
             },
                   function (err) { console.error("Execute error", err); });
 }
+
 gapi.load("client:auth2", function () {
-      gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
+      gapi.auth2.init({ client_id: "YOUR_CLIENT_ID"});
 });
+
 
 // For getting the insight information.
 
