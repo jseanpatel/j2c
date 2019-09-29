@@ -11,6 +11,8 @@ var signoutButton = document.getElementById('signout_button');
 /**
  *  On load, called to load the auth2 library and API client library.
  */
+
+ 
 function handleClientLoad() {
       gapi.load('client:auth2', initClient);
 }
@@ -242,9 +244,12 @@ function execute() {
             },
                   function (err) { console.error("Execute error", err); });
 }
+
 gapi.load("client:auth2", function () {
       gapi.auth2.init({ client_id:"709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com"});
+
 });
+
 
 // For getting the insight information.
 
