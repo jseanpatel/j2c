@@ -1,8 +1,6 @@
-
-
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyBNfoaom9AG4Flk41_Nh4-DTQ1wQX2k1DM';
+var API_KEY = 'AIzaSyBJOoEm9jZWTcdsJkfeVNVXvTF7HZD00dg';
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 // Authorization scopes required by the API; multiple scopes can be
@@ -16,38 +14,12 @@ var signoutButton = document.getElementById('signout_button');
 function handleClientLoad() {
       gapi.load('client:auth2', initClient);
 }
-
-// promise that would be resolved when gapi would be loaded
-var gapiPromise = (function(){
-      var deferred = $.Deferred();
-      window.onLoadCallback = function(){
-        deferred.resolve(gapi);
-      };
-      return deferred.promise()
-    }());
-    
-    var authInited = gapiPromise.then(function(){
-      gapi.auth2.init({
-          client_id: '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com'
-        });
-    })
-    
-    
-    $('#btn').click(function(){
-      gapiPromise.then(function(){
-        // will be executed after gapi is loaded
-      });
-    
-      authInited.then(function(){
-        // will be executed after gapi is loaded, and gapi.auth2.init was called
-      });
-    });
-
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
  */
 function initClient() {
+
       gapi.client.init({
             apiKey: API_KEY,
             clientId: CLIENT_ID,
@@ -251,7 +223,7 @@ function authenticate() {
                   function (err) { console.error("Error signing in", err); });
 }
 function loadClient() {
-      gapi.client.setApiKey("YOUR_API_KEY");
+      gapi.client.setApiKey("AIzaSyBJOoEm9jZWTcdsJkfeVNVXvTF7HZD00dg");
       return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
             .then(function () { console.log("GAPI client loaded for API"); },
                   function (err) { console.error("Error loading GAPI client for API", err); });
@@ -271,7 +243,7 @@ function execute() {
                   function (err) { console.error("Execute error", err); });
 }
 gapi.load("client:auth2", function () {
-      gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
+      gapi.auth2.init({ client_id:"709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com"});
 });
 
 // For getting the insight information.
