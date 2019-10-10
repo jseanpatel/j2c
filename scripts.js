@@ -1,159 +1,3 @@
-// Client ID and API key from the Developer Console
-var CLIENT_ID = '709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyBJOoEm9jZWTcdsJkfeVNVXvTF7HZD00dg';
-// Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-// Authorization scopes required by the API; multiple scopes can be
-// included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/calendar.events";
-var authorizeButton = document.getElementById('authorize_button');
-var signoutButton = document.getElementById('signout_button');
-/**
- *  On load, called to load the auth2 library and API client library.
- */
-
- 
-function handleClientLoad() {
-      gapi.load('client:auth2', initClient);
-}
-/**
- *  Initializes the API client library and sets up sign-in state
- *  listeners.
- */
-function initClient() {
-
-      gapi.client.init({
-            apiKey: API_KEY,
-            clientId: CLIENT_ID,
-            discoveryDocs: DISCOVERY_DOCS,
-            scope: SCOPES
-      }).then(function () {
-            // Listen for sign-in state changes.
-            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-            // Handle the initial sign-in state.
-            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-            authorizeButton.onclick = handleAuthClick;
-            signoutButton.onclick = handleSignoutClick;
-      }, function (error) {
-            appendPre(JSON.stringify(error, null, 2));
-      });
-}
-/**
- *  Called when the signed in status changes, to update the UI
- *  appropriately. After a sign-in, the API is called.
- */
-function updateSigninStatus(isSignedIn) {
-      if (isSignedIn) {
-            authorizeButton.style.display = 'none';
-            signoutButton.style.display = 'block';
-            // listUpcomingEvents();
-      } else {
-            authorizeButton.style.display = 'block';
-            signoutButton.style.display = 'none';
-      }
-}
-/**
- *  Sign in the user upon button click.
- */
-function handleAuthClick(event) {
-      gapi.auth2.getAuthInstance().signIn();
-}
-/**
- *  Sign out the user upon button click.
- */
-function handleSignoutClick(event) {
-      gapi.auth2.getAuthInstance().signOut();
-}
-/**
- * Append a pre element to the body containing the given message
- * as its text node. Used to display the results of the API call.
- *
- * @param {string} message Text to be placed in pre element.
- */
-function appendPre(message) {
-      var pre = document.getElementById('content');
-      var textContent = document.createTextNode(message + '\n');
-      pre.appendChild(textContent);
-}
-/**
- * Print the summary and start datetime/date of the next ten events in
- * the authorized user's calendar. If no events are found an
- * appropriate message is printed.
- */
-function listUpcomingEvents() {
-      gapi.client.calendar.events.list({
-            'calendarId': 'primary',
-            'timeMin': (new Date()).toISOString(),
-            'showDeleted': false,
-            'singleEvents': true,
-            'maxResults': 10,
-            'orderBy': 'startTime'
-      }).then(function (response) {
-            var events = response.result.items;
-            appendPre('Upcoming events:');
-            if (events.length > 0) {
-                  for (i = 0; i < events.length; i++) {
-                        var event = events[i];
-                        var when = event.start.dateTime;
-                        if (!when) {
-                              when = event.start.date;
-                        }
-                        appendPre(event.summary + ' (' + when + ')')
-                  }
-            } else {
-                  appendPre('No upcoming events found.');
-            }
-      });
-}
-
-function makeEvent(id) {
-      var eventInformation = getEventInfo(id)
-      var event = {
-            'summary': eventInformation[0],
-            'location': eventInformation[1],
-            'description': eventInformation[2],
-            'start': {
-                  // '2019-05-24T04:00:00-00:00' ------> 2019-05-28T16:00:00-00:00'
-                  'dateTime': eventInformation[3],
-                  'timeZone': 'America/New_York'
-            },
-            'end': {
-                  'dateTime': eventInformation[4],
-                  'timeZone': 'America/New_York'
-            },
-            'recurrence': [
-                  'RRULE:FREQ=DAILY;COUNT=1'
-            ],
-            'attendees': [
-
-            ],
-            'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                        { 'method': 'email', 'minutes': 24 * 60 },
-                        { 'method': 'popup', 'minutes': 120 }
-                  ]
-            }
-      };
-
-      var request = gapi.client.calendar.events.insert({
-            "calendarId": "primary",
-            "resource": event
-      });
-
-      request.execute(function (event) {
-            appendPre("Your events have been added to your calendar: " + event.htmlLink);
-      });
-}
-
-function addEventsToCalendar() {
-      for (i = 0; i <= sessionStorage.length - 1; i++) {
-            var key = sessionStorage.key(i)
-            makeEvent(key)
-      }
-}
-
-
 var i = 0;
 var speed = 50;
 
@@ -182,14 +26,6 @@ function writeTitleTextJ2C() {
       }
 }
 
-function startGoing() {
-      listUpcomingEvents();
-}
-
-function addTopic(id) {
-      sessionStorage.setItem(id, true)
-}
-
 window.onload = function printInfo() {
       document.getElementById('content').innerHTML = "Here is your curated information based on your preferences." + "<br />" + "<br />"
       for (i = 0; i <= sessionStorage.length - 1; i++) {
@@ -212,43 +48,6 @@ function formatKey(key) {
       return capString.join(' ')
 }
 
-/**
-  * Sample JavaScript code for calendar.events.insert
-  * See instructions for running APIs Explorer code samples locally:
-  * https://developers.google.com/explorer-help/guides/code_samples#javascript
-  */
-
-function authenticate() {
-      return gapi.auth2.getAuthInstance()
-            .signIn({ scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events" })
-            .then(function () { console.log("Sign-in successful"); },
-                  function (err) { console.error("Error signing in", err); });
-}
-function loadClient() {
-      gapi.client.setApiKey("AIzaSyBJOoEm9jZWTcdsJkfeVNVXvTF7HZD00dg");
-      return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-            .then(function () { console.log("GAPI client loaded for API"); },
-                  function (err) { console.error("Error loading GAPI client for API", err); });
-}
-// Make sure the client is loaded and sign-in is complete before calling this method.
-function execute() {
-      return gapi.client.calendar.events.insert({
-            "resource": {
-                  "end": {},
-                  "start": {}
-            }
-      })
-            .then(function (response) {
-                  // Handle the results here (response.result has the parsed body).
-                  console.log("Response", response);
-            },
-                  function (err) { console.error("Execute error", err); });
-}
-
-gapi.load("client:auth2", function () {
-      gapi.auth2.init({ client_id:"709658249756-57gopr6l3b70jdhd0di5q5qp5c961vrr.apps.googleusercontent.com"});
-
-});
 
 
 // For getting the insight information.
@@ -395,10 +194,10 @@ function getEventInfo(id) {
                   case 'Senior':
                         return 'Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you are supposed to be!';
                   case 'Teacher':
-                  /**    "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals" */
+                        return  "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals";
                   case 'Parent':
-                  /**    "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor" */
-                  /** Information Search */
+                        return "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor";
+
                   case 'where_to_start':
                   /**    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" */
                   case 'general_process':
@@ -538,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                el.classList.toggle('is-active');
+               $target.classList.toggle('is-active');
    
             });
          });
