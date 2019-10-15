@@ -61,9 +61,9 @@ function getInfo(id) {
                   case 'Senior':
                         return 'Apply early to college 2. Reach out to your guidance counseolors 3. Start researching local scholarships 4. Do not let your grades slip! 5. Make deadlines adn stick to them! 6. Remember that you will end up where you are supposed to be!';
                   case 'Teacher':
-                  /**    "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals" */
+                        return "1. Open with a formal introduction 2. Only write reccomendations for students that deserve them 3. Require requests by a certain date 4. Ask the student about their goals";
                   case 'Parent':
-                  /**    "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor" */
+                        return "1. Remember that this is your child's process 2. Be supportive and an open ear 3. Have the tough conversations about finances with your children 4. Remind your child that happiness is the most important factor";
                   /** Information Search */
                   case 'where_to_start':
                   /**    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" */
